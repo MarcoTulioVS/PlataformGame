@@ -32,5 +32,8 @@ public class PlayerMovement : MonoBehaviour,IPlayerMovement
         }
     }
 
-    
+    public void Jump(Rigidbody2D rb, float jumpForce)
+    {
+        rb.AddForce(Vector2.up * jumpForce,ForceMode2D.Impulse);
+    }
 }
