@@ -7,4 +7,6 @@ public interface IPlayerInput
     Vector3 GetInput();
 
     bool GetInputJump();
+
+    bool GetInputAttack();
 }

@@ -10,6 +10,12 @@ public class KeyboardPlayerInput : MonoBehaviour,IPlayerInput
         return new Vector3(horizontalMovement, 0, 0);
     }
 
+    public bool GetInputAttack()
+    {
+        bool isAttacking = Input.GetButtonDown("Fire1");
+        return isAttacking;
+    }
+
     public bool GetInputJump()
     {
         bool isJumping = Input.GetButtonDown("Jump");
