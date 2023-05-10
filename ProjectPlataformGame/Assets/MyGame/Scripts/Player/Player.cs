@@ -15,7 +15,6 @@ public class Player : MonoBehaviour
     private float jumpForce;
 
     private Rigidbody2D rb;
-
     
     private void Awake()
     {
@@ -39,6 +38,8 @@ public class Player : MonoBehaviour
             playerMovement.Jump(rb, jumpForce);
             playerMovement.IsGrounded = false;
         }
+
+       
     }
 
     

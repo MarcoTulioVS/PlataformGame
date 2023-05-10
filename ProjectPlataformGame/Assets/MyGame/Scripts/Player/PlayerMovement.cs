@@ -38,6 +38,7 @@ public class PlayerMovement : MonoBehaviour,IPlayerMovement
     {
         rb.AddForce(Vector2.up * jumpForce,ForceMode2D.Impulse);
         playerAnimation.SetAnimation(2);
+        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
