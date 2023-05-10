@@ -8,18 +8,27 @@ public class Player : MonoBehaviour
 
     private IPlayerMovement playerMovement;
 
+    private IPlayerAttack playerAttack;
+
     [SerializeField]
     private float speed;
 
     [SerializeField]
     private float jumpForce;
 
+    [SerializeField]
+    private float forceShoot;
+
     private Rigidbody2D rb;
-    
+
+    private bool isFired;
+
+
     private void Awake()
     {
         playerInput = GetComponent<IPlayerInput>();
         playerMovement = GetComponent<IPlayerMovement>();
+        playerAttack = GetComponent<IPlayerAttack>();   
         rb = GetComponent<Rigidbody2D>();
     }
     void Start()
@@ -39,7 +48,12 @@ public class Player : MonoBehaviour
             playerMovement.IsGrounded = false;
         }
 
-       
+        if (playerInput.GetInputAttack() && !isFired)
+        {
+            isFired = true;
+            playerAttack.Attack(forceShoot);
+        }
+
     }
 
     

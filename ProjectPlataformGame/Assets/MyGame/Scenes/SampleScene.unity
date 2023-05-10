@@ -259,7 +259,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 946857596}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: MobilePlayerInput, Assembly-CSharp
           m_MethodName: DirectionMovement
           m_Mode: 3
@@ -275,7 +275,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 946857596}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: MobilePlayerInput, Assembly-CSharp
           m_MethodName: DirectionMovement
           m_Mode: 3
@@ -5562,6 +5562,7 @@ GameObject:
   - component: {fileID: 946857597}
   - component: {fileID: 946857598}
   - component: {fileID: 946857599}
+  - component: {fileID: 946857600}
   - component: {fileID: 946857596}
   m_Layer: 0
   m_Name: player
@@ -5701,7 +5702,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 946857590}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6b45de8e34868a4b969db7c47db1c5b, type: 3}
+  m_Script: {fileID: 11500000, guid: 17e3e3b92cec8974192eae45e1a61679, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &946857597
@@ -5730,8 +5731,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 8
   jumpForce: 15
-  light: {fileID: 262626135}
-  lightObj: {fileID: 262626132}
+  forceShoot: 5
 --- !u!114 &946857599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5744,6 +5744,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03cfbb3ec215ae8489572e99013d6870, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &946857600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 946857590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac5e80cb8e7046e499cef99c8c22d58f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rbPrefab: {fileID: 9096965815503410177, guid: 81c7e4099fa4bed40ac44726f234da96, type: 3}
 --- !u!1 &1005812097
 GameObject:
   m_ObjectHideFlags: 0
@@ -5801,7 +5814,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 946857596}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: MobilePlayerInput, Assembly-CSharp
           m_MethodName: DirectionMovement
           m_Mode: 3
@@ -5817,7 +5830,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 946857596}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: MobilePlayerInput, Assembly-CSharp
           m_MethodName: DirectionMovement
           m_Mode: 3
@@ -6113,7 +6126,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 946857596}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: MobilePlayerInput, Assembly-CSharp
           m_MethodName: ExecuteJump
           m_Mode: 6
@@ -6129,7 +6142,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 946857596}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: MobilePlayerInput, Assembly-CSharp
           m_MethodName: ExecuteJump
           m_Mode: 6
