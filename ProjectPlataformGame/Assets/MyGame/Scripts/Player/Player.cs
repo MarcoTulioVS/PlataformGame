@@ -16,7 +16,7 @@ public class Player : MonoBehaviour
 
     private Rigidbody2D rb;
 
-    private bool isGrounded;
+    
     private void Awake()
     {
         playerInput = GetComponent<IPlayerInput>();
@@ -34,18 +34,12 @@ public class Player : MonoBehaviour
 
         playerMovement.Move(playerInput.GetInput(), speed);
 
-        if (playerInput.GetInputJump() && isGrounded)
+        if (playerInput.GetInputJump() && playerMovement.IsGrounded)
         {
             playerMovement.Jump(rb, jumpForce);
-            isGrounded = false;
+            playerMovement.IsGrounded = false;
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.layer == 6) //Colission with the ground
-        {
-            isGrounded = true;
-        }
-    }
+    
 }
