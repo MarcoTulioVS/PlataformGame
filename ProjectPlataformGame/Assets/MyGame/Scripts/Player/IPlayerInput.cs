@@ -9,4 +9,5 @@ public interface IPlayerInput
     bool GetInputJump();
 
     bool GetInputAttack();
+
 }

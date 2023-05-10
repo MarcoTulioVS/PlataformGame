@@ -21,8 +21,6 @@ public class Player : MonoBehaviour
 
     private Rigidbody2D rb;
 
-    private bool isFired;
-
 
     private void Awake()
     {
@@ -30,6 +28,7 @@ public class Player : MonoBehaviour
         playerMovement = GetComponent<IPlayerMovement>();
         playerAttack = GetComponent<IPlayerAttack>();   
         rb = GetComponent<Rigidbody2D>();
+
     }
     void Start()
     {
@@ -48,10 +47,11 @@ public class Player : MonoBehaviour
             playerMovement.IsGrounded = false;
         }
 
-        if (playerInput.GetInputAttack() && !isFired)
+        if (playerInput.GetInputAttack())
         {
-            isFired = true;
+
             playerAttack.Attack(forceShoot);
+
         }
 
     }

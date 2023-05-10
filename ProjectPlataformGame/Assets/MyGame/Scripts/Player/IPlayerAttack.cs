@@ -5,4 +5,5 @@ using UnityEngine;
 public interface IPlayerAttack
 {
     void Attack(float force);
+
 }

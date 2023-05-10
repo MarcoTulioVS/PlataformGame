@@ -9,6 +9,8 @@ public class MobilePlayerInput : MonoBehaviour,IPlayerInput
     private bool isJumping;
 
     private bool isAttacking;
+
+    private bool noAttack;
     public void DirectionMovement(int value)
     {
         direction = value;
@@ -22,6 +24,11 @@ public class MobilePlayerInput : MonoBehaviour,IPlayerInput
     public void ExecuteAttack(bool value)
     {
         isAttacking = value;
+    }
+
+    public void NoAttack(bool value)
+    {
+        noAttack = value;
     }
     public Vector3 GetInput()
     {
@@ -37,4 +44,5 @@ public class MobilePlayerInput : MonoBehaviour,IPlayerInput
     {
         return isJumping;
     }
+
 }
