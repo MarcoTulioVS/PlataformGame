@@ -17,9 +17,12 @@ public class PlayerAttack : MonoBehaviour,IPlayerAttack
 
     private CompanionAnimation companionAnimation;
 
+    private IPlayerMovement playerMovement;
+
     private void Awake()
     {
         companionAnimation = GetComponentInChildren<CompanionAnimation>();
+        playerMovement = GetComponent<IPlayerMovement>();
     }
     public void Attack(float force)
     {
@@ -27,12 +30,21 @@ public class PlayerAttack : MonoBehaviour,IPlayerAttack
         {
             nextFire = Time.time + fireRate;
             rbProjectile = Instantiate(rbPrefab, pointAttack.position, rbPrefab.transform.rotation);
+
+            if (playerMovement.isFront)
+            {
+                rbProjectile.transform.eulerAngles = new Vector3(0, 0, 90);
+            }
+            else
+            {
+                rbProjectile.transform.eulerAngles = new Vector3(0, 180, 90);
+            }
             StartCoroutine("PlayAnimationAttack");
         }
 
         
         rbProjectile.velocity = new Vector2(force, 0);
-        Destroy(rbProjectile.gameObject, 3);
+        Destroy(rbProjectile.gameObject, 1);
     }
 
     IEnumerator PlayAnimationAttack()

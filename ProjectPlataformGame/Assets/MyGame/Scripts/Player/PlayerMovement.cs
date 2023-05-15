@@ -7,9 +7,11 @@ public class PlayerMovement : MonoBehaviour,IPlayerMovement
     private PlayerAnimation playerAnimation;
 
     public bool IsGrounded { get; set; }
+    public bool isFront { get; set; }
 
     private void Awake()
     {
+        isFront = true;
         playerAnimation = GetComponent<PlayerAnimation>();
     }
 
@@ -21,12 +23,14 @@ public class PlayerMovement : MonoBehaviour,IPlayerMovement
         {
             playerAnimation.SetAnimation(1);
             transform.eulerAngles = new Vector3(0, 0, 0);
+            isFront = true;
             
         }
         else if(direction.x < 0 && IsGrounded)
         {
             playerAnimation.SetAnimation(1);
             transform.eulerAngles = new Vector3(0, 180, 0);
+            isFront = false;
         }
         else if(direction.x==0 && IsGrounded)
         {

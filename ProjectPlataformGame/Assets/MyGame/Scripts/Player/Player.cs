@@ -49,9 +49,15 @@ public class Player : MonoBehaviour
 
         if (playerInput.GetInputAttack())
         {
-
-            playerAttack.Attack(forceShoot);
-
+            if (playerMovement.isFront)
+            {
+                playerAttack.Attack(forceShoot);
+            }
+            else
+            {
+                playerAttack.Attack(-forceShoot);
+            }
+            
         }
 
     }

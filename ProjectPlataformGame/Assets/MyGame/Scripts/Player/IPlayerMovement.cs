@@ -10,4 +10,6 @@ public interface IPlayerMovement
 
     public bool IsGrounded { get; set; }
 
+    public bool isFront { get; set; }
+
 }
