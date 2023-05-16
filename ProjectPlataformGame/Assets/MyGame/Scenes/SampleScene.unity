@@ -1643,6 +1643,7 @@ GameObject:
   - component: {fileID: 1719331411}
   - component: {fileID: 1719331413}
   - component: {fileID: 1719331412}
+  - component: {fileID: 1719331414}
   m_Layer: 0
   m_Name: slime
   m_TagString: Untagged
@@ -1751,7 +1752,11 @@ MonoBehaviour:
   point: {fileID: 1723581365}
   behindPoint: {fileID: 1748465189}
   direction: {x: 0, y: 0}
+  rb: {fileID: 0}
   enemy: {fileID: 11400000, guid: 37fa1b9249c63d541aa335fb7b20d8d3, type: 2}
+  <isFront>k__BackingField: 0
+  <isRight>k__BackingField: 0
+  anim: {fileID: 0}
 --- !u!61 &1719331412
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1799,6 +1804,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 6
+--- !u!114 &1719331414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1719331407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52e4b9118d8a1b94e954b3e5ced41363, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  point: {fileID: 1723581365}
+  behindPoint: {fileID: 1748465189}
+  direction: {x: 0, y: 0}
+  enemy: {fileID: 11400000, guid: 37fa1b9249c63d541aa335fb7b20d8d3, type: 2}
 --- !u!1 &1723581364
 GameObject:
   m_ObjectHideFlags: 0
