@@ -9,7 +9,7 @@ public abstract class CharacterEnemy : MonoBehaviour,IEnemy
 
     public Vector2 direction;
 
-    private Rigidbody2D rb;
+    protected Rigidbody2D rb;
 
     public Enemy enemy;
     public bool isFront { get ; set ; }
