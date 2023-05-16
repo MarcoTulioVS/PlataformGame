@@ -5,6 +5,7 @@ using UnityEngine;
 public class Slime : MonoBehaviour,IEnemy
 {
     public Transform point;
+    public Transform behindPoint;
 
     public Vector2 direction;
 
@@ -14,12 +15,15 @@ public class Slime : MonoBehaviour,IEnemy
     public bool isFront { get ; set ; }
     public bool isRight { get ; set ; }
 
+    private Animator anim;
+
     private void Awake()
     {
         direction = Vector2.right;
         isRight = true;
 
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
 
         if (isRight)
         {
@@ -75,6 +79,7 @@ public class Slime : MonoBehaviour,IEnemy
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawRay(point.position, direction * enemy.MaxVision);
+        Gizmos.DrawRay(behindPoint.position, -direction * enemy.MaxVision);
     }
 
     public void HitPlayer()
@@ -83,19 +88,33 @@ public class Slime : MonoBehaviour,IEnemy
 
         if (hit.collider != null)
         {
+            anim.SetInteger("transition", 0);
+
             if (hit.collider.gameObject.tag == "Player")
             {
+                
                 isFront = true;
                 float distance = Vector2.Distance(transform.position, hit.collider.transform.position);
                 
-                Debug.Log(distance);
-
                 if (distance <= enemy.StopDistance)
                 {
+                    anim.SetInteger("transition", 1);
                     isFront = false;
                     rb.velocity = Vector2.zero;
                 }
 
+            }
+        }
+
+        RaycastHit2D behindHit = Physics2D.Raycast(behindPoint.transform.position,-direction,enemy.MaxVision);
+
+        if(behindHit.collider != null)
+        {
+            if (behindHit.transform.CompareTag("Player"))
+            {
+               
+                isRight = !isRight;
+                isFront = true;
             }
         }
     }
