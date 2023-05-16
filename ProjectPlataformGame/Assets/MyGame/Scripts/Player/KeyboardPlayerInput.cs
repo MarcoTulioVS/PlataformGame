@@ -12,7 +12,7 @@ public class KeyboardPlayerInput : MonoBehaviour,IPlayerInput
 
     public bool GetInputAttack()
     {
-        bool isAttacking = Input.GetKey(KeyCode.Mouse0);
+        bool isAttacking = Input.GetButtonDown("Fire1");
         return isAttacking;
     }
 
