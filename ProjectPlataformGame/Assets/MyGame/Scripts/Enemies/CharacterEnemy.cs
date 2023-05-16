@@ -15,7 +15,8 @@ public abstract class CharacterEnemy : MonoBehaviour,IEnemy
     public bool isFront { get ; set ; }
     public bool isRight { get ; set ; }
 
-    private Animator anim;
+    public Animator anim { get; private set; }
+    
 
     private void Awake()
     {
