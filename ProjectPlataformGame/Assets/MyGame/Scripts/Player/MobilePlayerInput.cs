@@ -11,6 +11,13 @@ public class MobilePlayerInput : MonoBehaviour,IPlayerInput
     private bool isAttacking;
 
     private bool noAttack;
+
+    private int verticalDirection;
+    public void VerticalMovement(int value)
+    {
+        verticalDirection = value;
+    }
+    
     public void DirectionMovement(int value)
     {
         direction = value;
@@ -44,5 +51,11 @@ public class MobilePlayerInput : MonoBehaviour,IPlayerInput
     {
         return isJumping;
     }
+
+    public float GetVerticalInput()
+    {
+        return verticalDirection;
+    }
+
 
 }

@@ -52,4 +52,10 @@ public class PlayerMovement : MonoBehaviour,IPlayerMovement
             IsGrounded = true;
         }
     }
+
+    public void MoveVertical()
+    {
+        playerAnimation.SetAnimation(4);
+    }
+
 }

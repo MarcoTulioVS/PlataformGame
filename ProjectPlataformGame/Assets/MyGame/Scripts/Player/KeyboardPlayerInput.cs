@@ -22,4 +22,10 @@ public class KeyboardPlayerInput : MonoBehaviour,IPlayerInput
         return isJumping;
     }
 
+    public float GetVerticalInput()
+    {
+        float verticalMovement = Input.GetAxisRaw("Vertical");
+        return verticalMovement;
+    }
+
 }

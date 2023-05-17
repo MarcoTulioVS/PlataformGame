@@ -60,6 +60,12 @@ public class Player : MonoBehaviour
             
         }
 
+        if (playerInput.GetVerticalInput()<0)
+        {
+            playerMovement.MoveVertical();
+        }
+        
+
     }
 
     

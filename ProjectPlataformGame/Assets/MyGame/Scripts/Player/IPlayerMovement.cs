@@ -12,4 +12,5 @@ public interface IPlayerMovement
 
     public bool isFront { get; set; }
 
+    void MoveVertical();
 }
