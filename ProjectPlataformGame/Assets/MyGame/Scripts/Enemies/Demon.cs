@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Skeleton : EnemyNormalMovement
+public class Demon : EnemyNormalMovement
 {
     
     void Start()
@@ -15,8 +15,4 @@ public class Skeleton : EnemyNormalMovement
     {
         Movement();
     }
-
-    
-
-
 }
