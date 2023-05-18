@@ -21,6 +21,7 @@ public class Player : MonoBehaviour
 
     private Rigidbody2D rb;
 
+    public SpriteRenderer spriteBackground;
 
     private void Awake()
     {
@@ -63,6 +64,8 @@ public class Player : MonoBehaviour
         if (playerInput.GetVerticalInput()<0)
         {
             playerMovement.MoveVertical();
+            spriteBackground.color = Color.white;
+
         }
         
 
