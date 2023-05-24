@@ -17,7 +17,7 @@ public class CameraScript : MonoBehaviour
     private float minY;
 
     public Transform target;
-
+    
     void Awake()
     {
         
@@ -26,6 +26,8 @@ public class CameraScript : MonoBehaviour
     
     void Update()
     {
+
         transform.position = new Vector3(Mathf.Clamp(target.position.x, minX, maxX), Mathf.Clamp(target.position.y, minY, maxY), transform.position.z);
+
     }
 }

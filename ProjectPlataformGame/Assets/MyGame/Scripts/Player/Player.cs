@@ -23,6 +23,8 @@ public class Player : MonoBehaviour
 
     public SpriteRenderer spriteBackground;
 
+    
+
     private void Awake()
     {
         playerInput = GetComponent<IPlayerInput>();
@@ -72,4 +74,6 @@ public class Player : MonoBehaviour
     }
 
     
+
+
 }
