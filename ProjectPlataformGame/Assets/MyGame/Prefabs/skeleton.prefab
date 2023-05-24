@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 2542787575234601039}
   - component: {fileID: 2542787575234601038}
   - component: {fileID: 2542787575234601043}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: skeleton
   m_TagString: Untagged
   m_Icon: {fileID: 0}

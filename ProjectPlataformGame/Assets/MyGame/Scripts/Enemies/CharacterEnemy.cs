@@ -16,8 +16,8 @@ public abstract class CharacterEnemy : MonoBehaviour,IEnemy
     public bool isRight { get ; set ; }
 
     public Animator anim { get; private set; }
-    
 
+    public PlayerHealth playerHealth;
     private void Awake()
     {
         direction = Vector2.right;
@@ -25,6 +25,7 @@ public abstract class CharacterEnemy : MonoBehaviour,IEnemy
 
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        
 
         if (isRight)
         {
@@ -96,8 +97,9 @@ public abstract class CharacterEnemy : MonoBehaviour,IEnemy
                 isFront = true;
                 float distance = Vector2.Distance(transform.position, hit.collider.transform.position);
                 
-                if (distance <= enemy.StopDistance)
+                if (distance <= enemy.StopDistance && !playerHealth.wasHited)
                 {
+                    StartCoroutine(playerHealth.DecrementLife());
                     anim.SetInteger("transition", 1);
                     isFront = false;
                     rb.velocity = Vector2.zero;

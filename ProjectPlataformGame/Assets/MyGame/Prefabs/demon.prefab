@@ -74,7 +74,7 @@ GameObject:
   - component: {fileID: 8455502684682578526}
   - component: {fileID: 8455502684682578512}
   - component: {fileID: 8455502684682578527}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: demon
   m_TagString: Untagged
   m_Icon: {fileID: 0}

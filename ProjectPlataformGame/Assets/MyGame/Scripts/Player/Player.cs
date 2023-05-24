@@ -29,7 +29,7 @@ public class Player : MonoBehaviour
     {
         playerInput = GetComponent<IPlayerInput>();
         playerMovement = GetComponent<IPlayerMovement>();
-        playerAttack = GetComponent<IPlayerAttack>();   
+        playerAttack = GetComponent<IPlayerAttack>();  
         rb = GetComponent<Rigidbody2D>();
 
     }
@@ -69,8 +69,8 @@ public class Player : MonoBehaviour
             spriteBackground.color = Color.white;
 
         }
-        
 
+       
     }
 
     
