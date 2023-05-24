@@ -14,6 +14,7 @@ public class EnemyNormalMovement : CharacterEnemy
 
     private Vector2 initialPos;
 
+    private bool isAttacking;
 
     void Start()
     {
@@ -50,5 +51,30 @@ public class EnemyNormalMovement : CharacterEnemy
         {
             movingFoward = true;
         }
+    }
+
+    public override void HitPlayer()
+    {
+        if (isAttacking && !playerHealth.wasHited)
+        {
+            StartCoroutine(playerHealth.DecrementLife());
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            isAttacking = true;
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            isAttacking = false;
+        }
+
     }
 }

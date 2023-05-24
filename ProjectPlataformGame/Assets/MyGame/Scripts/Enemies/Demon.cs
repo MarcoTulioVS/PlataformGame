@@ -14,5 +14,8 @@ public class Demon : EnemyNormalMovement
     void Update()
     {
         Movement();
+        HitPlayer();
     }
+
+    
 }

@@ -928,6 +928,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: slime
       objectReference: {fileID: 0}
+    - target: {fileID: 4185366365788746530, guid: 1c6e6633232e6ce49ac40d32d09bef73, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4185366365788746555, guid: 1c6e6633232e6ce49ac40d32d09bef73, type: 3}
       propertyPath: playerHealth
       value: 
@@ -13311,6 +13315,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animHud: {fileID: 65584747}
+  wasHited: 0
 --- !u!1 &959336771
 GameObject:
   m_ObjectHideFlags: 0
@@ -14929,6 +14934,71 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1553147989
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8455502684682578522, guid: dc52e926fb13b7e4fb374e8fe76f5b1c, type: 3}
+      propertyPath: m_Name
+      value: demon
+      objectReference: {fileID: 0}
+    - target: {fileID: 8455502684682578522, guid: dc52e926fb13b7e4fb374e8fe76f5b1c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8455502684682578525, guid: dc52e926fb13b7e4fb374e8fe76f5b1c, type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8455502684682578525, guid: dc52e926fb13b7e4fb374e8fe76f5b1c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8455502684682578525, guid: dc52e926fb13b7e4fb374e8fe76f5b1c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.82
+      objectReference: {fileID: 0}
+    - target: {fileID: 8455502684682578525, guid: dc52e926fb13b7e4fb374e8fe76f5b1c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8455502684682578525, guid: dc52e926fb13b7e4fb374e8fe76f5b1c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8455502684682578525, guid: dc52e926fb13b7e4fb374e8fe76f5b1c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8455502684682578525, guid: dc52e926fb13b7e4fb374e8fe76f5b1c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8455502684682578525, guid: dc52e926fb13b7e4fb374e8fe76f5b1c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8455502684682578525, guid: dc52e926fb13b7e4fb374e8fe76f5b1c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8455502684682578525, guid: dc52e926fb13b7e4fb374e8fe76f5b1c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8455502684682578525, guid: dc52e926fb13b7e4fb374e8fe76f5b1c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8455502684682578526, guid: dc52e926fb13b7e4fb374e8fe76f5b1c, type: 3}
+      propertyPath: playerHealth
+      value: 
+      objectReference: {fileID: 946857601}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: dc52e926fb13b7e4fb374e8fe76f5b1c, type: 3}
 --- !u!1 &1601591518
 GameObject:
   m_ObjectHideFlags: 0
@@ -31371,6 +31441,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8845312910632376532, guid: d643924fec6b1e0499d14f5f966addd4, type: 3}
+      propertyPath: playerHealth
+      value: 
+      objectReference: {fileID: 946857601}
     - target: {fileID: 8845312910632376532, guid: d643924fec6b1e0499d14f5f966addd4, type: 3}
       propertyPath: spriteBackground
       value: 

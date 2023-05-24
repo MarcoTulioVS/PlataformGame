@@ -14,6 +14,7 @@ public class Skeleton : EnemyNormalMovement
     void Update()
     {
         Movement();
+        HitPlayer();
     }
 
     
