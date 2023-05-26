@@ -4,22 +4,23 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public int life { get; private set; }
-
+   
     private int lifeAnimationIndex;
 
     public Animator animHud;
 
     public bool wasHited;
+
+    public int life{ get; private set;}
     void Start()
     {
         life = 3;
     }
 
-    
+   
     void Update()
     {
-        
+        Die();
     }
 
     public IEnumerator DecrementLife()
@@ -34,6 +35,14 @@ public class PlayerHealth : MonoBehaviour
         yield return new WaitForSeconds(1f);
         wasHited = false;
         
+    }
+
+    private void Die()
+    {
+        if (life == 0)
+        {
+            StartCoroutine(GameController.instance.GameOver());
+        }
     }
 
 }
