@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Ghost : CharacterEnemy
 {
-    public SpriteRenderer spriteBackground;
+    public List<SpriteRenderer> spriteBackgroundList = new List<SpriteRenderer>();
     void Start()
     {
         
@@ -26,9 +26,11 @@ public class Ghost : CharacterEnemy
         {
             anim.SetInteger("transition", 0);
 
-            if (hit.collider.gameObject.tag == "Player")
+            if (hit.collider.gameObject.tag == "Player" && !playerHealth.wasHited && !player.isDucked)
             {
-                spriteBackground.color = Color.black;
+                StartCoroutine(playerHealth.DecrementLife());
+                //spriteBackground.color = Color.black;
+                DefineAllBackgroundColor(Color.black);
                 isFront = true;
                 float distance = Vector2.Distance(transform.position, hit.collider.transform.position);
 
@@ -44,7 +46,8 @@ public class Ghost : CharacterEnemy
         }
         else
         {
-            spriteBackground.color = Color.white;
+            //spriteBackground.color = Color.white;
+            DefineAllBackgroundColor(Color.white);
         }
 
         RaycastHit2D behindHit = Physics2D.Raycast(behindPoint.transform.position, -direction, enemy.MaxVision);
@@ -53,13 +56,22 @@ public class Ghost : CharacterEnemy
         {
             if (behindHit.transform.CompareTag("Player"))
             {
-                spriteBackground.color = Color.black;
+                //spriteBackground.color = Color.black;
+                DefineAllBackgroundColor(Color.black);
                 isRight = !isRight;
                 isFront = true;
             }
         }
         
 
+    }
+
+    public void DefineAllBackgroundColor(Color color)
+    {
+        foreach(var background in spriteBackgroundList)
+        {
+            background.color = color;
+        }
     }
 
 }

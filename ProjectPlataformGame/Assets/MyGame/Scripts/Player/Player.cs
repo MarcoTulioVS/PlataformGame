@@ -21,9 +21,10 @@ public class Player : MonoBehaviour
 
     private Rigidbody2D rb;
 
-    public SpriteRenderer spriteBackground;
+    public Ghost ghost;
 
-    
+    public bool isDucked { get; private set; }
+
 
     private void Awake()
     {
@@ -66,8 +67,12 @@ public class Player : MonoBehaviour
         if (playerInput.GetVerticalInput()<0)
         {
             playerMovement.MoveVertical();
-            spriteBackground.color = Color.white;
-
+            ghost.DefineAllBackgroundColor(Color.white);
+            isDucked = true;
+        }
+        else
+        {
+            isDucked=false;
         }
 
        

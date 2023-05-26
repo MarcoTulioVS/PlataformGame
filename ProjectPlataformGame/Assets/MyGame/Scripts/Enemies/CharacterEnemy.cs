@@ -18,6 +18,8 @@ public abstract class CharacterEnemy : MonoBehaviour,IEnemy
     public Animator anim { get; private set; }
 
     public PlayerHealth playerHealth;
+
+    public Player player;
     private void Awake()
     {
         direction = Vector2.right;

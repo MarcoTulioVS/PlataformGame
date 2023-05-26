@@ -24,7 +24,7 @@ public class Plant : CharacterEnemy
         {
             if (hit.gameObject.tag == "Player")
             {
-               
+                
                 StartCoroutine("ExecuteAttack");
             }
             else
@@ -48,6 +48,7 @@ public class Plant : CharacterEnemy
         {
             enemy.IsReady = true;
             anim.SetInteger("transition", 1);
+            StartCoroutine(playerHealth.DecrementLife());
             yield return new WaitForSeconds(1);
             anim.SetInteger("transition", 0);
             yield return new WaitForSeconds(2);
