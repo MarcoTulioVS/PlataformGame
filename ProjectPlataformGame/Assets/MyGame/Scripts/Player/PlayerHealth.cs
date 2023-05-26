@@ -12,9 +12,12 @@ public class PlayerHealth : MonoBehaviour
     public bool wasHited;
 
     public int life{ get; private set;}
+
+    private Player player;
     void Start()
     {
         life = 3;
+        player = GetComponent<Player>();
     }
 
    
@@ -41,6 +44,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if (life == 0)
         {
+            player.enabled = false;
             StartCoroutine(GameController.instance.GameOver());
         }
     }
