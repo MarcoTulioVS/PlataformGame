@@ -74,4 +74,12 @@ public class Ghost : CharacterEnemy
         }
     }
 
+    protected override void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "shoot")
+        {
+            Destroy(collision.gameObject);
+        }
+    }
+
 }

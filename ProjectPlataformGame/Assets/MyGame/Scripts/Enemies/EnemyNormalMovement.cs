@@ -61,21 +61,17 @@ public class EnemyNormalMovement : CharacterEnemy
         }
     }
 
-    protected override void OnCollisionEnter2D(Collision2D collision)
+    protected void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
             isAttacking = true;
         }
 
-        if (collision.gameObject.tag == "shoot")
-        {
-            anim.SetInteger("transition", 2);
-            Destroy(gameObject,0.5f);
-        }
+
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
+    protected void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
@@ -83,4 +79,6 @@ public class EnemyNormalMovement : CharacterEnemy
         }
 
     }
+
+    
 }

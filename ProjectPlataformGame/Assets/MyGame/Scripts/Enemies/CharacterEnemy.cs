@@ -122,13 +122,13 @@ public abstract class CharacterEnemy : MonoBehaviour,IEnemy
         }
     }
 
-    protected virtual void OnCollisionEnter2D(Collision2D collision)
+    protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag=="shoot")
+        if (collision.gameObject.tag == "shoot")
         {
-            
+
             anim.SetInteger("transition", 2);
-            Destroy(gameObject,0.5f);
+            Destroy(gameObject, 0.5f);
         }
     }
 }
