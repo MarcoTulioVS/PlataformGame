@@ -27,10 +27,6 @@ public class Plant : CharacterEnemy
                 
                 StartCoroutine("ExecuteAttack");
             }
-            else
-            {
-                anim.SetInteger("transition", 0);
-            }
         }
         
 

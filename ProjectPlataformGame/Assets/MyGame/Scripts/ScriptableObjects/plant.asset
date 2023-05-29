@@ -15,4 +15,4 @@ MonoBehaviour:
   maxVision: 0
   stopDistance: 0
   speed: 0
-  radius: 0.34
+  radius: 0.49

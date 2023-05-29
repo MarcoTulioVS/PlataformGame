@@ -20,6 +20,8 @@ public abstract class CharacterEnemy : MonoBehaviour,IEnemy
     public PlayerHealth playerHealth;
 
     public Player player;
+
+    
     private void Awake()
     {
         direction = Vector2.right;
@@ -41,11 +43,7 @@ public abstract class CharacterEnemy : MonoBehaviour,IEnemy
         }
 
     }
-    public void Attack()
-    {
-        
-    }
-
+    
     public virtual void Movement()
     {
         if (isFront)
@@ -91,7 +89,8 @@ public abstract class CharacterEnemy : MonoBehaviour,IEnemy
 
         if (hit.collider != null)
         {
-            anim.SetInteger("transition", 0);
+            //NÃO APAGAR AINDA. REVISAR CASO NECESSARIO.
+            //anim.SetInteger("transition", 0);
 
             if (hit.collider.gameObject.tag == "Player")
             {
@@ -120,6 +119,16 @@ public abstract class CharacterEnemy : MonoBehaviour,IEnemy
                 isRight = !isRight;
                 isFront = true;
             }
+        }
+    }
+
+    protected virtual void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag=="shoot")
+        {
+            
+            anim.SetInteger("transition", 2);
+            Destroy(gameObject,0.5f);
         }
     }
 }

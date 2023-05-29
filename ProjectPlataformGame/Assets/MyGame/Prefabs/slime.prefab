@@ -90,7 +90,7 @@ Transform:
   m_GameObject: {fileID: 4185366365788746530}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -3.52, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.1624, y: 1.1624, z: 1.1624}
   m_Children:
   - {fileID: 4185366365784611544}
   - {fileID: 4185366365558353736}
@@ -230,3 +230,5 @@ MonoBehaviour:
   behindPoint: {fileID: 4185366365558353736}
   direction: {x: 0, y: 0}
   enemy: {fileID: 11400000, guid: 37fa1b9249c63d541aa335fb7b20d8d3, type: 2}
+  playerHealth: {fileID: 0}
+  player: {fileID: 0}

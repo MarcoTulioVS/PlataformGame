@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: slime
   m_EditorClassIdentifier: 
   maxVision: 6
-  stopDistance: 1.3
+  stopDistance: 3
   speed: 5
+  radius: 0

@@ -945,18 +945,6 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4185366365788746559, guid: 1c6e6633232e6ce49ac40d32d09bef73, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.1624
-      objectReference: {fileID: 0}
-    - target: {fileID: 4185366365788746559, guid: 1c6e6633232e6ce49ac40d32d09bef73, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.1624
-      objectReference: {fileID: 0}
-    - target: {fileID: 4185366365788746559, guid: 1c6e6633232e6ce49ac40d32d09bef73, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.1624
-      objectReference: {fileID: 0}
-    - target: {fileID: 4185366365788746559, guid: 1c6e6633232e6ce49ac40d32d09bef73, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7.9967613
       objectReference: {fileID: 0}
@@ -1099,7 +1087,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 946857596}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: MobilePlayerInput, Assembly-CSharp
           m_MethodName: DirectionMovement
           m_Mode: 3
@@ -1115,7 +1103,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 946857596}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: MobilePlayerInput, Assembly-CSharp
           m_MethodName: DirectionMovement
           m_Mode: 3
@@ -1512,7 +1500,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 946857596}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: MobilePlayerInput, Assembly-CSharp
           m_MethodName: ExecuteAttack
           m_Mode: 6
@@ -1528,7 +1516,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 946857596}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: MobilePlayerInput, Assembly-CSharp
           m_MethodName: ExecuteAttack
           m_Mode: 6
@@ -3349,11 +3337,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6547714299972976106, guid: 477ea897a0244ae4d83f67b983c99d5b, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6547714299972976110, guid: 477ea897a0244ae4d83f67b983c99d5b, type: 3}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6547714299972976110, guid: 477ea897a0244ae4d83f67b983c99d5b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.95904005
+      objectReference: {fileID: 0}
+    - target: {fileID: 6547714299972976110, guid: 477ea897a0244ae4d83f67b983c99d5b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.95904005
+      objectReference: {fileID: 0}
+    - target: {fileID: 6547714299972976110, guid: 477ea897a0244ae4d83f67b983c99d5b, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.95904005
       objectReference: {fileID: 0}
     - target: {fileID: 6547714299972976110, guid: 477ea897a0244ae4d83f67b983c99d5b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3361,7 +3361,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6547714299972976110, guid: 477ea897a0244ae4d83f67b983c99d5b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.05
+      value: -3.64
       objectReference: {fileID: 0}
     - target: {fileID: 6547714299972976110, guid: 477ea897a0244ae4d83f67b983c99d5b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -13362,7 +13362,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 946857590}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6b45de8e34868a4b969db7c47db1c5b, type: 3}
+  m_Script: {fileID: 11500000, guid: 17e3e3b92cec8974192eae45e1a61679, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &946857597
@@ -13654,7 +13654,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 946857596}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: MobilePlayerInput, Assembly-CSharp
           m_MethodName: DirectionMovement
           m_Mode: 3
@@ -13670,7 +13670,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 946857596}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: MobilePlayerInput, Assembly-CSharp
           m_MethodName: DirectionMovement
           m_Mode: 3
@@ -14674,7 +14674,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 946857596}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: MobilePlayerInput, Assembly-CSharp
           m_MethodName: VerticalMovement
           m_Mode: 3
@@ -14690,7 +14690,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 946857596}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: MobilePlayerInput, Assembly-CSharp
           m_MethodName: VerticalMovement
           m_Mode: 3
@@ -15071,12 +15071,24 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8455502684682578525, guid: dc52e926fb13b7e4fb374e8fe76f5b1c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.4614484
+      objectReference: {fileID: 0}
+    - target: {fileID: 8455502684682578525, guid: dc52e926fb13b7e4fb374e8fe76f5b1c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.4614484
+      objectReference: {fileID: 0}
+    - target: {fileID: 8455502684682578525, guid: dc52e926fb13b7e4fb374e8fe76f5b1c, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.4614484
+      objectReference: {fileID: 0}
+    - target: {fileID: 8455502684682578525, guid: dc52e926fb13b7e4fb374e8fe76f5b1c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.5
       objectReference: {fileID: 0}
     - target: {fileID: 8455502684682578525, guid: dc52e926fb13b7e4fb374e8fe76f5b1c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.82
+      value: -4.28
       objectReference: {fileID: 0}
     - target: {fileID: 8455502684682578525, guid: dc52e926fb13b7e4fb374e8fe76f5b1c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -15118,6 +15130,14 @@ PrefabInstance:
       propertyPath: playerHealth
       value: 
       objectReference: {fileID: 946857601}
+    - target: {fileID: 8455502684682578526, guid: dc52e926fb13b7e4fb374e8fe76f5b1c, type: 3}
+      propertyPath: movementRangeBack
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8455502684682578526, guid: dc52e926fb13b7e4fb374e8fe76f5b1c, type: 3}
+      propertyPath: movementRangeForward
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc52e926fb13b7e4fb374e8fe76f5b1c, type: 3}
 --- !u!1 &1601591518
@@ -16115,7 +16135,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 946857596}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: MobilePlayerInput, Assembly-CSharp
           m_MethodName: ExecuteJump
           m_Mode: 6
@@ -16131,7 +16151,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 946857596}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: MobilePlayerInput, Assembly-CSharp
           m_MethodName: ExecuteJump
           m_Mode: 6
@@ -31579,7 +31599,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8845312910632376528, guid: d643924fec6b1e0499d14f5f966addd4, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8845312910632376532, guid: d643924fec6b1e0499d14f5f966addd4, type: 3}
       propertyPath: player
