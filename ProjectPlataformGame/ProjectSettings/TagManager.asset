@@ -6,6 +6,7 @@ TagManager:
   tags:
   - changeCam
   - shoot
+  - life
   layers:
   - Default
   - TransparentFX

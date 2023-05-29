@@ -9,10 +9,12 @@ public class PlayerMovement : MonoBehaviour,IPlayerMovement
     public bool IsGrounded { get; set; }
     public bool isFront { get; set; }
 
+    private PlayerHealth playerHealth;
     private void Awake()
     {
         isFront = true;
         playerAnimation = GetComponent<PlayerAnimation>();
+        playerHealth = GetComponent<PlayerHealth>();
     }
 
     public void Move(Vector3 direction, float speed)
@@ -51,8 +53,17 @@ public class PlayerMovement : MonoBehaviour,IPlayerMovement
         {
             IsGrounded = true;
         }
+
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "life")
+        {
+            playerHealth.IncrementLife();
+            Destroy(collision.gameObject);
+        }
+    }
     public void MoveVertical()
     {
         playerAnimation.SetAnimation(4);

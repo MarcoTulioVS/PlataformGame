@@ -40,6 +40,15 @@ public class PlayerHealth : MonoBehaviour
         
     }
 
+    public void IncrementLife()
+    {
+        if(life>0 && life < 3)
+        {
+            life++;
+            lifeAnimationIndex -= 1;
+            animHud.SetInteger("transition", lifeAnimationIndex);
+        }
+    }
     private void Die()
     {
         if (life == 0)
