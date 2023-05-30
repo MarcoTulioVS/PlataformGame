@@ -15,6 +15,8 @@ public class Slime : CharacterEnemy
     {
         HitPlayer();
         Movement();
+
+       
     }
 
    

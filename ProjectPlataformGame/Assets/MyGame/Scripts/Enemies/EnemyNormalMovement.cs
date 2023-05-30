@@ -45,11 +45,13 @@ public class EnemyNormalMovement : CharacterEnemy
         if (Vector2.Distance(transform.position, initialPos) >= movementRangeForward)
         {
             movingFoward = false;
+            
         }
 
         if (Vector2.Distance(transform.position, initialPos) <= movementRangeForward - movementRangeBack)
         {
             movingFoward = true;
+            
         }
     }
 

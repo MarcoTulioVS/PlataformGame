@@ -7,6 +7,8 @@ public abstract class CharacterEnemy : MonoBehaviour,IEnemy
     public Transform point;
     public Transform behindPoint;
 
+    public Transform pointAttack;
+
     public Vector2 direction;
 
     protected Rigidbody2D rb;
@@ -56,6 +58,7 @@ public abstract class CharacterEnemy : MonoBehaviour,IEnemy
             }
             else
             {
+                
                 transform.eulerAngles = new Vector3(0, 180, 0);
                 direction = Vector2.left;
                 rb.velocity = new Vector2(-enemy.Speed, rb.velocity.y);
@@ -72,7 +75,7 @@ public abstract class CharacterEnemy : MonoBehaviour,IEnemy
     
     void Update()
     {
-       
+        
         
     }
 
@@ -81,6 +84,7 @@ public abstract class CharacterEnemy : MonoBehaviour,IEnemy
         Gizmos.color = Color.yellow;
         Gizmos.DrawRay(point.position, direction * enemy.MaxVision);
         Gizmos.DrawRay(behindPoint.position, -direction * enemy.MaxVision);
+        Gizmos.DrawWireSphere(pointAttack.position,enemy.Radius);
     }
 
     public virtual void HitPlayer()
@@ -98,12 +102,23 @@ public abstract class CharacterEnemy : MonoBehaviour,IEnemy
                 isFront = true;
                 float distance = Vector2.Distance(transform.position, hit.collider.transform.position);
                 
-                if (distance <= enemy.StopDistance && !playerHealth.wasHited)
+
+                if (distance <= enemy.StopDistance)
                 {
-                    StartCoroutine(playerHealth.DecrementLife());
+                    
                     anim.SetInteger("transition", 1);
                     isFront = false;
                     rb.velocity = Vector2.zero;
+
+                    Collider2D col = Physics2D.OverlapCircle(pointAttack.position, enemy.Radius);
+
+                    if (col != null)
+                    {
+                        if (col.gameObject.tag == "Player" && !playerHealth.wasHited)
+                        {
+                            StartCoroutine(playerHealth.DecrementLife());
+                        }
+                    }
                 }
 
             }
