@@ -8,6 +8,7 @@ public class Plant : CharacterEnemy
     void Start()
     {
         enemy.IsReady = false;
+        
     }
 
     
