@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.EventSystems;
 public class Player : MonoBehaviour
 {
     private IPlayerInput playerInput;
@@ -42,39 +42,43 @@ public class Player : MonoBehaviour
     
     void Update()
     {
-
-        playerMovement.Move(playerInput.GetInput(), speed);
-
-        if (playerInput.GetInputJump() && playerMovement.IsGrounded)
+        //Deve retirar a verificação do event system
+        //quando for gerar a build para android
+        if (EventSystem.current.currentSelectedGameObject == null)
         {
-            playerMovement.Jump(rb, jumpForce);
-            playerMovement.IsGrounded = false;
-        }
+            playerMovement.Move(playerInput.GetInput(), speed);
 
-        if (playerInput.GetInputAttack())
-        {
-            if (playerMovement.isFront)
+            if (playerInput.GetInputJump() && playerMovement.IsGrounded)
             {
-                playerAttack.Attack(forceShoot);
+                playerMovement.Jump(rb, jumpForce);
+                playerMovement.IsGrounded = false;
+            }
+       
+            if (playerInput.GetInputAttack())
+            {
+                if (playerMovement.isFront)
+                {
+                    playerAttack.Attack(forceShoot);
+                }
+                else
+                {
+                    playerAttack.Attack(-forceShoot);
+                }
+
+            }
+
+            if (playerInput.GetVerticalInput() < 0)
+            {
+                playerMovement.MoveVertical();
+                ghost.DefineAllBackgroundColor(Color.white);
+                isDucked = true;
             }
             else
             {
-                playerAttack.Attack(-forceShoot);
+                isDucked = false;
             }
-            
-        }
 
-        if (playerInput.GetVerticalInput()<0)
-        {
-            playerMovement.MoveVertical();
-            ghost.DefineAllBackgroundColor(Color.white);
-            isDucked = true;
-        }
-        else
-        {
-            isDucked=false;
-        }
-
+        }//end event system verification
        
     }
 
