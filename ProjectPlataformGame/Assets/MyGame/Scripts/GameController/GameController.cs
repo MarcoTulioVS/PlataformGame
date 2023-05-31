@@ -11,9 +11,12 @@ public class GameController : MonoBehaviour
     public GameObject gameOverScreen;
 
     public GameSaveState gameSaveState;
+
+    public GameObject menuScreenPause;
     void Awake()
     {
         instance = this;
+        Time.timeScale = 1;
     }
 
     // Update is called once per frame
@@ -53,5 +56,17 @@ public class GameController : MonoBehaviour
     public void LoadGame()
     {
         SceneManager.LoadScene(gameSaveState.IndexLevel);
+    }
+
+    public void DisableMenuScreenPause()
+    {
+        menuScreenPause.SetActive(false);
+        Time.timeScale = 1;
+    }
+
+    public void EnableMenuScreenPause()
+    {
+        menuScreenPause.SetActive(true);
+        Time.timeScale = 0;
     }
 }
