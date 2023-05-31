@@ -63,6 +63,11 @@ public class PlayerMovement : MonoBehaviour,IPlayerMovement
             playerHealth.IncrementLife();
             Destroy(collision.gameObject);
         }
+
+        if (collision.gameObject.name == "final")
+        {
+            GameController.instance.NextScene();
+        }
     }
     public void MoveVertical()
     {

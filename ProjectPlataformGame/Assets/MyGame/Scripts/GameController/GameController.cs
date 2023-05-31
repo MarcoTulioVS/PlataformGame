@@ -9,6 +9,8 @@ public class GameController : MonoBehaviour
     public PlayerAnimation playerAnimation;
 
     public GameObject gameOverScreen;
+
+    public GameSaveState gameSaveState;
     void Awake()
     {
         instance = this;
@@ -45,5 +47,11 @@ public class GameController : MonoBehaviour
     public void NextScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        gameSaveState.IndexLevel += 1;
+    }
+
+    public void LoadGame()
+    {
+        SceneManager.LoadScene(gameSaveState.IndexLevel);
     }
 }
