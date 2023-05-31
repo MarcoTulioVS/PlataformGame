@@ -64,9 +64,14 @@ public class PlayerMovement : MonoBehaviour,IPlayerMovement
             Destroy(collision.gameObject);
         }
 
-        if (collision.gameObject.name == "final")
+        if (collision.gameObject.tag == "final")
         {
             GameController.instance.NextScene();
+        }
+
+        if (collision.gameObject.tag == "death")
+        {
+            StartCoroutine(GameController.instance.GameOver());
         }
     }
     public void MoveVertical()

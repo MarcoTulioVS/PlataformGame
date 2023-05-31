@@ -25,10 +25,10 @@ public class GameController : MonoBehaviour
     public IEnumerator GameOver()
     {
         playerAnimation.SetAnimation(3);
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(1.5f);
         playerAnimation.GetComponent<Transform>().position -= Vector3.down * 2 * Time.deltaTime;
         playerAnimation.GetComponent<Collider2D>().enabled = false;
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
         gameOverScreen.SetActive(true);
         
     }
