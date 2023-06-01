@@ -54,6 +54,11 @@ public class PlayerMovement : MonoBehaviour,IPlayerMovement
             IsGrounded = true;
         }
 
+        if(collision.gameObject.layer == 8) //Collision with obstacle
+        {
+            StartCoroutine(playerHealth.DecrementLife());
+        }
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
