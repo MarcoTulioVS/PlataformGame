@@ -14,6 +14,8 @@ public class GameController : MonoBehaviour
 
     public GameObject menuScreenPause;
 
+    public GameObject validateStartGameScreen;
+
     void Awake()
     {
         instance = this;
@@ -63,9 +65,7 @@ public class GameController : MonoBehaviour
     {
         if (PlayerPrefs.HasKey("scene"))
         {
-
-            PlayerPrefs.DeleteKey("scene");
-            gameSaveState.IndexLevel *= 0;
+            validateStartGameScreen.SetActive(true);
 
         }
         else
@@ -75,6 +75,23 @@ public class GameController : MonoBehaviour
             gameSaveState.SaveGame();
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
+    }
+
+    public void ConfirmStartGame()
+    {
+        PlayerPrefs.DeleteKey("scene");
+        gameSaveState.IndexLevel *= 0;
+
+        gameSaveState.SaveGame();
+        gameSaveState.IndexLevel += 1;
+        gameSaveState.SaveGame();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
+    }
+
+    public void HideValidateStartGameScreen()
+    {
+        validateStartGameScreen.SetActive(false);
     }
 
     public void LoadGame()
