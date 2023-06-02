@@ -13,10 +13,13 @@ public class GameController : MonoBehaviour
     public GameSaveState gameSaveState;
 
     public GameObject menuScreenPause;
+
     void Awake()
     {
         instance = this;
         Time.timeScale = 1;
+        //PlayerPrefs.DeleteKey("scene");
+        gameSaveState.IndexLevel = PlayerPrefs.GetInt("scene");
     }
 
     // Update is called once per frame
@@ -49,13 +52,34 @@ public class GameController : MonoBehaviour
 
     public void NextScene()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        
+        gameSaveState.SaveGame();
         gameSaveState.IndexLevel += 1;
+        gameSaveState.SaveGame();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void StartGame()
+    {
+        if (PlayerPrefs.HasKey("scene"))
+        {
+
+            PlayerPrefs.DeleteKey("scene");
+            gameSaveState.IndexLevel *= 0;
+
+        }
+        else
+        {
+            gameSaveState.SaveGame();
+            gameSaveState.IndexLevel += 1;
+            gameSaveState.SaveGame();
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
     }
 
     public void LoadGame()
     {
-        SceneManager.LoadScene(gameSaveState.IndexLevel);
+        SceneManager.LoadScene(PlayerPrefs.GetInt("scene"));
     }
 
     public void DisableMenuScreenPause()
