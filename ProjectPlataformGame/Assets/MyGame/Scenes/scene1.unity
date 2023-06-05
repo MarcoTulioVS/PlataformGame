@@ -4258,10 +4258,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   songs:
-  - {fileID: 8300000, guid: be4fc4025e9fcde4d8ef9aef8acede1f, type: 3}
-  - {fileID: 8300000, guid: 8aa0485437ea8e7439efc55096ba291b, type: 3}
+  - {fileID: 8300000, guid: e63cfda85cfe19b4d8f288866fb05e0e, type: 3}
+  - {fileID: 8300000, guid: c9a709d8f78005d4b84114a95bab3d16, type: 3}
   - {fileID: 8300000, guid: 091570dccc6ddb4428b5a3e91ceb22b3, type: 3}
-  audioSource: {fileID: 0}
+  audioSource: {fileID: 968999526}
 --- !u!1 &690033357
 GameObject:
   m_ObjectHideFlags: 0
@@ -14657,6 +14657,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfcff01ddfac5f7439f8b339ea58d3d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeStopped: 0
 --- !u!114 &946857598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14935,7 +14936,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 650f7bd63d205d74fa9872b56f71c882, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.606
   m_Pitch: 1
   Loop: 1
   Mute: 0
