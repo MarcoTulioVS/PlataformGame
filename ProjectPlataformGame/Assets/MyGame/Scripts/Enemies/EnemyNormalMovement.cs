@@ -60,6 +60,11 @@ public class EnemyNormalMovement : CharacterEnemy
         if (isAttacking && !playerHealth.wasHited)
         {
             StartCoroutine(playerHealth.DecrementLife());
+
+            if (playerHealth.life <= 0 && !playerHealth.isDead)
+            {
+                AudioController.instance.PlaySong(AudioController.instance.songs[2]);
+            }
         }
     }
 

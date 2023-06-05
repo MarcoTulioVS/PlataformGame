@@ -4260,7 +4260,7 @@ MonoBehaviour:
   songs:
   - {fileID: 8300000, guid: e63cfda85cfe19b4d8f288866fb05e0e, type: 3}
   - {fileID: 8300000, guid: c9a709d8f78005d4b84114a95bab3d16, type: 3}
-  - {fileID: 8300000, guid: 091570dccc6ddb4428b5a3e91ceb22b3, type: 3}
+  - {fileID: 8300000, guid: d9d9a9e0897f9784696cd346cd4eeb3c, type: 3}
   audioSource: {fileID: 968999526}
 --- !u!1 &690033357
 GameObject:
@@ -14714,6 +14714,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animHud: {fileID: 65584747}
   wasHited: 0
+  isDead: 0
 --- !u!1 &959336771
 GameObject:
   m_ObjectHideFlags: 0

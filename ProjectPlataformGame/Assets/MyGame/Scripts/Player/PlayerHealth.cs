@@ -10,6 +10,7 @@ public class PlayerHealth : MonoBehaviour
     public Animator animHud;
 
     public bool wasHited;
+    public bool isDead;
 
     public int life{ get; private set;}
 
@@ -53,8 +54,10 @@ public class PlayerHealth : MonoBehaviour
     {
         if (life == 0)
         {
+            isDead = true;
             player.enabled = false;
             StartCoroutine(GameController.instance.GameOver());
+            
         }
     }
 

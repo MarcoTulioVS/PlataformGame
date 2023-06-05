@@ -117,6 +117,11 @@ public abstract class CharacterEnemy : MonoBehaviour,IEnemy
                         if (col.gameObject.tag == "Player" && !playerHealth.wasHited)
                         {
                             StartCoroutine(playerHealth.DecrementLife());
+
+                            if(playerHealth.life <= 0  && !playerHealth.isDead)
+                            {
+                                AudioController.instance.PlaySong(AudioController.instance.songs[2]);
+                            }
                         }
                     }
                 }
