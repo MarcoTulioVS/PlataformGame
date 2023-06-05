@@ -148,6 +148,7 @@ public abstract class CharacterEnemy : MonoBehaviour,IEnemy
         {
 
             anim.SetInteger("transition", 2);
+            AudioController.instance.PlaySong(AudioController.instance.songs[3]);
             Destroy(gameObject, 0.5f);
         }
     }

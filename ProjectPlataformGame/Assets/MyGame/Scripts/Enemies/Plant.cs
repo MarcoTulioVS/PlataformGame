@@ -27,6 +27,7 @@ public class Plant : CharacterEnemy
             {
                 
                 StartCoroutine("ExecuteAttack");
+                
             }
         }
         
@@ -45,6 +46,7 @@ public class Plant : CharacterEnemy
         {
             enemy.IsReady = true;
             anim.SetInteger("transition", 1);
+            AudioController.instance.PlaySong(AudioController.instance.songs[4]);
             StartCoroutine(playerHealth.DecrementLife());
             yield return new WaitForSeconds(1);
             anim.SetInteger("transition", 0);
