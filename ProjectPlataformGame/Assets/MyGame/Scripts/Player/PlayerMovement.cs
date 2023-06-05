@@ -8,10 +8,13 @@ public class PlayerMovement : MonoBehaviour,IPlayerMovement
 
     public bool IsGrounded { get; set; }
     public bool isFront { get; set; }
+    public bool isDucking { get; set; }
 
     private PlayerHealth playerHealth;
 
     public float timeStopped;
+
+    
     private void Awake()
     {
         isFront = true;
@@ -95,6 +98,12 @@ public class PlayerMovement : MonoBehaviour,IPlayerMovement
     public void MoveVertical()
     {
         playerAnimation.SetAnimation(4);
+
+        if (!isDucking)
+        {
+            isDucking = true;
+            AudioController.instance.PlaySong(AudioController.instance.songs[5]);
+        }
     }
 
     private void Update()

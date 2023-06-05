@@ -69,13 +69,16 @@ public class Player : MonoBehaviour
 
             if (playerInput.GetVerticalInput() < 0)
             {
+                
                 playerMovement.MoveVertical();
                 ghost.DefineAllBackgroundColor(Color.white);
                 isDucked = true;
+                
             }
             else
             {
                 isDucked = false;
+                playerMovement.isDucking = false;
             }
 
         }//end event system verification
