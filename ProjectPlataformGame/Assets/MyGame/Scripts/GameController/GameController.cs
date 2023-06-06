@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 public class GameController : MonoBehaviour
 {
     public static GameController instance;
@@ -15,6 +16,15 @@ public class GameController : MonoBehaviour
     public GameObject menuScreenPause;
 
     public GameObject validateStartGameScreen;
+
+    //Credits
+
+    public Text audioText1;
+    public Text audioText2;
+    public GameObject previousButton;
+    public GameObject nextButton;
+    public GameObject creditPanelArt;
+    public GameObject creditPanelAudio;
 
     void Awake()
     {
@@ -109,5 +119,36 @@ public class GameController : MonoBehaviour
     {
         menuScreenPause.SetActive(true);
         Time.timeScale = 0;
+    }
+
+    public void EnableAudioText2()
+    {
+        audioText1.enabled = false;
+        audioText2.enabled = true;
+        previousButton.SetActive(true);
+        nextButton.SetActive(false);
+    }
+
+    public void EnableCreditPanelArt()
+    {
+        creditPanelAudio.SetActive(false);
+        creditPanelArt.SetActive(true);
+    }
+
+    public void EnableCreditPanelAudio()
+    {
+        creditPanelAudio.SetActive(true);
+    }
+    public void EnableAudioText1()
+    {
+        audioText1.enabled = true;
+        audioText2.enabled =false;
+        previousButton.SetActive(false);
+        nextButton.SetActive(true);
+    }
+
+    public void DisableCreditPanelArt()
+    {
+        creditPanelArt.SetActive(false);
     }
 }
