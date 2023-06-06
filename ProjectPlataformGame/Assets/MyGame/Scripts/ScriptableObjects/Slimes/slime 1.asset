@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxVision: 6
   stopDistance: 1.5
-  speed: 6
+  auxSpeed: 6
   radius: 0.38

@@ -18,6 +18,7 @@ public class EnemyNormalMovement : CharacterEnemy
 
     void Start()
     {
+        enemy.Speed = enemy.AuxSpeed;
         movingFoward = true;
         initialPos = transform.position;
     }

@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxVision: 0
   stopDistance: 0
-  speed: 5
+  auxSpeed: 5
   radius: 0
