@@ -22,10 +22,10 @@ public abstract class CharacterEnemy : MonoBehaviour,IEnemy
     public PlayerHealth playerHealth;
 
     public Player player;
-
     
     private void Awake()
     {
+        enemy.Speed = enemy.AuxSpeed;
         direction = Vector2.right;
         isRight = true;
 
@@ -146,7 +146,7 @@ public abstract class CharacterEnemy : MonoBehaviour,IEnemy
     {
         if (collision.gameObject.tag == "shoot")
         {
-
+            enemy.Speed = 0;
             anim.SetInteger("transition", 2);
             AudioController.instance.PlaySong(AudioController.instance.songs[3]);
             Destroy(gameObject, 0.5f);

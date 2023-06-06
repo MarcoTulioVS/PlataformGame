@@ -11,9 +11,12 @@ public class Enemy : ScriptableObject
     [SerializeField]
     private float stopDistance;
 
-    [SerializeField]
-    private float speed;
     
+    private float speed;
+
+    [SerializeField]
+    private float auxSpeed;
+
     [SerializeField]
     private float radius;
 
@@ -24,4 +27,6 @@ public class Enemy : ScriptableObject
     public float Speed { get { return this.speed; } set { this.speed = value; } }
     public float Radius { get { return this.radius; } set { this.radius = value; } }
     public bool IsReady { get { return this.isReady; } set { this.isReady = value; } }
+
+    public float AuxSpeed { get { return this.auxSpeed; } }
 }
