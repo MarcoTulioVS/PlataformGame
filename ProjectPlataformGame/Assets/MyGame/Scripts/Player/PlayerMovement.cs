@@ -89,13 +89,23 @@ public class PlayerMovement : MonoBehaviour,IPlayerMovement
 
         if (collision.gameObject.tag == "death")
         {
-            StartCoroutine(GameController.instance.GameOver());
-            AudioController.instance.PlaySong(AudioController.instance.songs[2]);
+            if (!GameController.instance.checkpointActive)
+            {
+                
+                StartCoroutine(GameController.instance.GameOver());
+                AudioController.instance.PlaySong(AudioController.instance.songs[2]);
+            }
+            else
+            {
+                GameController.instance.CheckPoint(this.transform);
+            }
+            
         }
 
         if (collision.gameObject.tag == "checkpoint")
         {
             GameController.instance.checkpointActive = true;
+            GameController.instance.checkpoint = collision.gameObject.transform;
         }
 
         
