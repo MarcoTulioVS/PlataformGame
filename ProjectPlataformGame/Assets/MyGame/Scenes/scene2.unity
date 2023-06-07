@@ -1144,6 +1144,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8455502684682578526, guid: dc52e926fb13b7e4fb374e8fe76f5b1c, type: 3}
+      propertyPath: enemy
+      value: 
+      objectReference: {fileID: 11400000, guid: 4a0a8b328a813f5499cd7b62304efe82, type: 2}
+    - target: {fileID: 8455502684682578526, guid: dc52e926fb13b7e4fb374e8fe76f5b1c, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 946857598}
@@ -1559,6 +1563,12 @@ MonoBehaviour:
   gameSaveState: {fileID: 268270694}
   menuScreenPause: {fileID: 14766170}
   validateStartGameScreen: {fileID: 0}
+  audioText1: {fileID: 0}
+  audioText2: {fileID: 0}
+  previousButton: {fileID: 0}
+  nextButton: {fileID: 0}
+  creditPanelArt: {fileID: 0}
+  creditPanelAudio: {fileID: 0}
 --- !u!4 &176870889
 Transform:
   m_ObjectHideFlags: 0
@@ -3033,6 +3043,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8455502684682578526, guid: dc52e926fb13b7e4fb374e8fe76f5b1c, type: 3}
+      propertyPath: enemy
+      value: 
+      objectReference: {fileID: 11400000, guid: 1f07fd14ed5979140b4a00b10f9aa028, type: 2}
     - target: {fileID: 8455502684682578526, guid: dc52e926fb13b7e4fb374e8fe76f5b1c, type: 3}
       propertyPath: player
       value: 
@@ -19129,6 +19143,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2542787575234601043, guid: 92691cd50747ffd4387be64186937ea6, type: 3}
+      propertyPath: enemy
+      value: 
+      objectReference: {fileID: 11400000, guid: d5cac8d5ce855da4e92c75d2219693ac, type: 2}
+    - target: {fileID: 2542787575234601043, guid: 92691cd50747ffd4387be64186937ea6, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 946857598}
@@ -19798,6 +19816,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8455502684682578526, guid: dc52e926fb13b7e4fb374e8fe76f5b1c, type: 3}
+      propertyPath: enemy
+      value: 
+      objectReference: {fileID: 11400000, guid: aaff715dc2543174b92039d665fcfdc6, type: 2}
+    - target: {fileID: 8455502684682578526, guid: dc52e926fb13b7e4fb374e8fe76f5b1c, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 946857598}
@@ -20101,6 +20123,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2542787575234601043, guid: 92691cd50747ffd4387be64186937ea6, type: 3}
+      propertyPath: enemy
+      value: 
+      objectReference: {fileID: 11400000, guid: 2f37b745810378a4781ece131b303a86, type: 2}
     - target: {fileID: 2542787575234601043, guid: 92691cd50747ffd4387be64186937ea6, type: 3}
       propertyPath: player
       value: 
