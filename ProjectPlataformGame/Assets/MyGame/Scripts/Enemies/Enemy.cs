@@ -21,6 +21,9 @@ public class Enemy : ScriptableObject
     private float radius;
 
     private bool isReady;
+
+    private RaycastHit2D hit;
+    private RaycastHit2D behindHit;
     public float MaxVision { get { return this.maxVision; } set { this.maxVision = value; } }
 
     public float StopDistance { get { return this.stopDistance; } set { this.stopDistance = value; } }
@@ -29,4 +32,7 @@ public class Enemy : ScriptableObject
     public bool IsReady { get { return this.isReady; } set { this.isReady = value; } }
 
     public float AuxSpeed { get { return this.auxSpeed; } }
+
+    public RaycastHit2D Hit { get { return this.hit; }set { this.hit = value; } }
+    public RaycastHit2D BehindHit { get { return this.behindHit; }set { this.behindHit = value; } }
 }
