@@ -71,7 +71,6 @@ public class Player : MonoBehaviour
             {
                 
                 playerMovement.MoveVertical();
-                ghost.DefineAllBackgroundColor(Color.white);
                 isDucked = true;
                 
             }
