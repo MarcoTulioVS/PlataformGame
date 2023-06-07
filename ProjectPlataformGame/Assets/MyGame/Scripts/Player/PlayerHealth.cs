@@ -25,6 +25,7 @@ public class PlayerHealth : MonoBehaviour
     void Update()
     {
         Die();
+        animHud.SetInteger("transition", lifeAnimationIndex);
     }
 
     public IEnumerator DecrementLife()
@@ -34,7 +35,7 @@ public class PlayerHealth : MonoBehaviour
             wasHited = true;
             life--;
             lifeAnimationIndex += 1;
-            animHud.SetInteger("transition", lifeAnimationIndex);
+            
         }
         yield return new WaitForSeconds(1f);
         wasHited = false;
@@ -47,17 +48,27 @@ public class PlayerHealth : MonoBehaviour
         {
             life++;
             lifeAnimationIndex -= 1;
-            animHud.SetInteger("transition", lifeAnimationIndex);
+            
         }
     }
     private void Die()
     {
-        if (life == 0)
+        if (life == 0 && !GameController.instance.checkpointActive)
         {
             isDead = true;
             player.enabled = false;
             StartCoroutine(GameController.instance.GameOver());
-            
+
+        }
+        else if(life==0 && GameController.instance.checkpointActive)
+        {
+            GameController.instance.CheckPoint(this.transform);
+            life = 3;
+            lifeAnimationIndex = 0;
+            isDead = false;
+            player.enabled = true;
+            StopCoroutine(GameController.instance.GameOver());
+
         }
     }
 

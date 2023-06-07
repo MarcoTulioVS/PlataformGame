@@ -26,6 +26,10 @@ public class GameController : MonoBehaviour
     public GameObject creditPanelArt;
     public GameObject creditPanelAudio;
 
+
+    public Transform checkpoint;
+    public bool checkpointActive;
+    
     void Awake()
     {
         instance = this;
@@ -150,5 +154,10 @@ public class GameController : MonoBehaviour
     public void DisableCreditPanelArt()
     {
         creditPanelArt.SetActive(false);
+    }
+
+    public void CheckPoint(Transform target)
+    {
+        target.position = checkpoint.position;
     }
 }

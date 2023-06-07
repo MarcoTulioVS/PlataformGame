@@ -9,6 +9,7 @@ TagManager:
   - life
   - final
   - death
+  - checkpoint
   layers:
   - Default
   - TransparentFX

@@ -93,6 +93,11 @@ public class PlayerMovement : MonoBehaviour,IPlayerMovement
             AudioController.instance.PlaySong(AudioController.instance.songs[2]);
         }
 
+        if (collision.gameObject.tag == "checkpoint")
+        {
+            GameController.instance.checkpointActive = true;
+        }
+
         
     }
     public void MoveVertical()
