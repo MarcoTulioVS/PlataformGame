@@ -89,18 +89,19 @@ public abstract class CharacterEnemy : MonoBehaviour,IEnemy
 
     public virtual void HitPlayer()
     {
-        RaycastHit2D hit = Physics2D.Raycast(point.transform.position, direction, enemy.MaxVision);
+        //RaycastHit2D hit = Physics2D.Raycast(point.transform.position, direction, enemy.MaxVision);
+        enemy.Hit = Physics2D.Raycast(point.transform.position, direction, enemy.MaxVision);
 
-        if (hit.collider != null)
+        if (enemy.Hit.collider != null)
         {
             //NÃO APAGAR AINDA. REVISAR CASO NECESSARIO.
             //anim.SetInteger("transition", 0);
 
-            if (hit.collider.gameObject.tag == "Player")
+            if (enemy.Hit.collider.gameObject.tag == "Player")
             {
                 
                 isFront = true;
-                float distance = Vector2.Distance(transform.position, hit.collider.transform.position);
+                float distance = Vector2.Distance(transform.position, enemy.Hit.collider.transform.position);
                 
 
                 if (distance <= enemy.StopDistance)
@@ -128,12 +129,19 @@ public abstract class CharacterEnemy : MonoBehaviour,IEnemy
 
             }
         }
-
-        RaycastHit2D behindHit = Physics2D.Raycast(behindPoint.transform.position,-direction,enemy.MaxVision);
-
-        if(behindHit.collider != null)
+        else
         {
-            if (behindHit.transform.CompareTag("Player"))
+            isFront = false;
+            rb.velocity = Vector2.zero;
+        }
+
+        //RaycastHit2D behindHit = Physics2D.Raycast(behindPoint.transform.position,-direction,enemy.MaxVision);
+
+        enemy.BehindHit = Physics2D.Raycast(behindPoint.transform.position, -direction, enemy.MaxVision);
+
+        if (enemy.BehindHit.collider != null)
+        {
+            if (enemy.BehindHit.transform.CompareTag("Player"))
             {
                
                 isRight = !isRight;

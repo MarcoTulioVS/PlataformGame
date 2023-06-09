@@ -24,7 +24,7 @@ public class Ghost : CharacterEnemy
 
         if (enemy.Hit.collider != null)
         {
-            Debug.Log(enemy.Hit.collider);
+            
             anim.SetInteger("transition", 0);
 
             if (enemy.Hit.collider.gameObject.tag == "Player" && !playerHealth.wasHited && !player.isDucked)
