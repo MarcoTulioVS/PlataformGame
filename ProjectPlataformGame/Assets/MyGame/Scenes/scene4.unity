@@ -2358,6 +2358,14 @@ MonoBehaviour:
   gameSaveState: {fileID: 285138983}
   menuScreenPause: {fileID: 14766170}
   validateStartGameScreen: {fileID: 0}
+  audioText1: {fileID: 0}
+  audioText2: {fileID: 0}
+  previousButton: {fileID: 0}
+  nextButton: {fileID: 0}
+  creditPanelArt: {fileID: 0}
+  creditPanelAudio: {fileID: 0}
+  checkpoint: {fileID: 0}
+  checkpointActive: 0
 --- !u!4 &176870889
 Transform:
   m_ObjectHideFlags: 0
@@ -2391,7 +2399,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &180053121
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3303,7 +3311,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &250692981
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13676,7 +13684,6 @@ MonoBehaviour:
   speed: 8
   jumpForce: 15
   forceShoot: 10
-  ghost: {fileID: 2082062141}
 --- !u!114 &946857599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14034,7 +14041,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1005812098
 RectTransform:
   m_ObjectHideFlags: 0
@@ -17009,7 +17016,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1452202510
 RectTransform:
   m_ObjectHideFlags: 0
@@ -20262,7 +20269,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1957234958
 RectTransform:
   m_ObjectHideFlags: 0
@@ -21530,17 +21537,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d643924fec6b1e0499d14f5f966addd4, type: 3}
---- !u!114 &2082062141 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8845312910632376532, guid: d643924fec6b1e0499d14f5f966addd4, type: 3}
-  m_PrefabInstance: {fileID: 2082062140}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c91443433761ee342b09b8a404404522, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &2082062142 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8845312910632376533, guid: d643924fec6b1e0499d14f5f966addd4, type: 3}

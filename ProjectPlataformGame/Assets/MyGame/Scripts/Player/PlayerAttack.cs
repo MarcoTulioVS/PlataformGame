@@ -44,7 +44,7 @@ public class PlayerAttack : MonoBehaviour,IPlayerAttack
 
         
         rbProjectile.velocity = new Vector2(force, 0);
-        Destroy(rbProjectile.gameObject, 1);
+        Destroy(rbProjectile.gameObject,1);
     }
 
     IEnumerator PlayAnimationAttack()
