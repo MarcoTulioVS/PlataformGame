@@ -22,24 +22,29 @@ public class Ghost : CharacterEnemy
         //RaycastHit2D hit = Physics2D.Raycast(point.transform.position, direction, enemy.MaxVision);
        enemy.Hit = Physics2D.Raycast(point.transform.position, direction, enemy.MaxVision);
 
-        if (enemy.Hit.collider != null)
+        if (enemy.Hit.collider != null && enemy.Hit.collider.gameObject.tag == "Player")
         {
             
             anim.SetInteger("transition", 0);
-
-            if (enemy.Hit.collider.gameObject.tag == "Player" && !playerHealth.wasHited && !player.isDucked)
+            
+            if (enemy.Hit.collider.gameObject.tag == "Player")
             {
-                StartCoroutine(playerHealth.DecrementLife());
-
                 
                 isFront = true;
                 float distance = Vector2.Distance(transform.position, enemy.Hit.collider.transform.position);
+
 
                 if (distance <= enemy.StopDistance)
                 {
                     anim.SetInteger("transition", 1);
                     isFront = false;
                     rb.velocity = Vector2.zero;
+
+                }
+
+                if(!playerHealth.wasHited && !player.isDucked)
+                {
+                    StartCoroutine(playerHealth.DecrementLife());
                 }
 
 
@@ -49,6 +54,7 @@ public class Ghost : CharacterEnemy
         }
         else
         {
+            
             isFront = false;
             rb.velocity = Vector2.zero;
         }

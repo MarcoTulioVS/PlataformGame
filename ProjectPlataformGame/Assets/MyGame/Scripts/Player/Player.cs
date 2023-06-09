@@ -21,8 +21,6 @@ public class Player : MonoBehaviour
 
     private Rigidbody2D rb;
 
-    public Ghost ghost;
-
     public bool isDucked { get; private set; }
 
 
