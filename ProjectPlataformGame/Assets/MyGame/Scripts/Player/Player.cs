@@ -48,8 +48,9 @@ public class Player : MonoBehaviour
 
             if (playerInput.GetInputJump() && playerMovement.IsGrounded)
             {
-                playerMovement.Jump(rb, jumpForce);
                 playerMovement.IsGrounded = false;
+                playerMovement.Jump(rb, jumpForce);
+                
             }
        
             if (playerInput.GetInputAttack())

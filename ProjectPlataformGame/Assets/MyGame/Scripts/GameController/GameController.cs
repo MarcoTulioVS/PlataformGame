@@ -151,9 +151,9 @@ public class GameController : MonoBehaviour
         nextButton.SetActive(true);
     }
 
-    public void DisableCreditPanelArt()
+    public void DisableCreditPanel(GameObject creditPanel)
     {
-        creditPanelArt.SetActive(false);
+        creditPanel.SetActive(false);
     }
 
     public void CheckPoint(Transform target)

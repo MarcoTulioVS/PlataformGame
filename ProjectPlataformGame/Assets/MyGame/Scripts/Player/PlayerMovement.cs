@@ -14,7 +14,6 @@ public class PlayerMovement : MonoBehaviour,IPlayerMovement
 
     public float timeStopped;
 
-    
     private void Awake()
     {
         isFront = true;
@@ -55,9 +54,9 @@ public class PlayerMovement : MonoBehaviour,IPlayerMovement
 
     public void Jump(Rigidbody2D rb, float jumpForce)
     {
-        rb.AddForce(Vector2.up * jumpForce,ForceMode2D.Impulse);
+        rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         playerAnimation.SetAnimation(2);
-        AudioController.instance.PlaySong(AudioController.instance.songs[0]); //Jump sound
+        AudioController.instance.PlaySong(AudioController.instance.songs[0]); //Jump sound   
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -73,6 +72,8 @@ public class PlayerMovement : MonoBehaviour,IPlayerMovement
         }
 
     }
+
+    
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -124,6 +125,6 @@ public class PlayerMovement : MonoBehaviour,IPlayerMovement
     private void Update()
     {
         timeStopped += Time.deltaTime;
-       
+        
     }
 }
