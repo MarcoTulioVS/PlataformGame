@@ -1237,10 +1237,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8455502684682578526, guid: dc52e926fb13b7e4fb374e8fe76f5b1c, type: 3}
-      propertyPath: enemy
-      value: 
-      objectReference: {fileID: 11400000, guid: 4a0a8b328a813f5499cd7b62304efe82, type: 2}
-    - target: {fileID: 8455502684682578526, guid: dc52e926fb13b7e4fb374e8fe76f5b1c, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 946857598}
@@ -4441,10 +4437,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8455502684682578526, guid: dc52e926fb13b7e4fb374e8fe76f5b1c, type: 3}
-      propertyPath: enemy
-      value: 
-      objectReference: {fileID: 11400000, guid: 1f07fd14ed5979140b4a00b10f9aa028, type: 2}
-    - target: {fileID: 8455502684682578526, guid: dc52e926fb13b7e4fb374e8fe76f5b1c, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 946857598}
@@ -6472,10 +6464,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2542787575234601043, guid: 92691cd50747ffd4387be64186937ea6, type: 3}
-      propertyPath: enemy
-      value: 
-      objectReference: {fileID: 11400000, guid: 053ccdabd70fdb44a83837fa50fea147, type: 2}
     - target: {fileID: 2542787575234601043, guid: 92691cd50747ffd4387be64186937ea6, type: 3}
       propertyPath: player
       value: 
@@ -24472,10 +24460,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8455502684682578526, guid: dc52e926fb13b7e4fb374e8fe76f5b1c, type: 3}
-      propertyPath: enemy
-      value: 
-      objectReference: {fileID: 11400000, guid: f59b591dea510ae46b143f445f3c1e11, type: 2}
-    - target: {fileID: 8455502684682578526, guid: dc52e926fb13b7e4fb374e8fe76f5b1c, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 946857598}
@@ -25549,10 +25533,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8845312910632376532, guid: d643924fec6b1e0499d14f5f966addd4, type: 3}
-      propertyPath: enemy
-      value: 
-      objectReference: {fileID: 11400000, guid: f9d6317630e4e3148bee29c29185ee13, type: 2}
     - target: {fileID: 8845312910632376532, guid: d643924fec6b1e0499d14f5f966addd4, type: 3}
       propertyPath: player
       value: 
@@ -28590,10 +28570,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2542787575234601043, guid: 92691cd50747ffd4387be64186937ea6, type: 3}
-      propertyPath: enemy
-      value: 
-      objectReference: {fileID: 11400000, guid: d5cac8d5ce855da4e92c75d2219693ac, type: 2}
-    - target: {fileID: 2542787575234601043, guid: 92691cd50747ffd4387be64186937ea6, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 946857598}
@@ -28684,10 +28660,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8455502684682578526, guid: dc52e926fb13b7e4fb374e8fe76f5b1c, type: 3}
-      propertyPath: enemy
-      value: 
-      objectReference: {fileID: 11400000, guid: f79772b471807de40b2bd0651e9bafaa, type: 2}
-    - target: {fileID: 8455502684682578526, guid: dc52e926fb13b7e4fb374e8fe76f5b1c, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 946857598}
@@ -28743,7 +28715,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8455502684682578525, guid: dc52e926fb13b7e4fb374e8fe76f5b1c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.7
+      value: -6.35
       objectReference: {fileID: 0}
     - target: {fileID: 8455502684682578525, guid: dc52e926fb13b7e4fb374e8fe76f5b1c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -29308,10 +29280,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8455502684682578526, guid: dc52e926fb13b7e4fb374e8fe76f5b1c, type: 3}
-      propertyPath: enemy
-      value: 
-      objectReference: {fileID: 11400000, guid: aaff715dc2543174b92039d665fcfdc6, type: 2}
-    - target: {fileID: 8455502684682578526, guid: dc52e926fb13b7e4fb374e8fe76f5b1c, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 946857598}
@@ -29575,10 +29543,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2542787575234601043, guid: 92691cd50747ffd4387be64186937ea6, type: 3}
-      propertyPath: enemy
-      value: 
-      objectReference: {fileID: 11400000, guid: 2f37b745810378a4781ece131b303a86, type: 2}
     - target: {fileID: 2542787575234601043, guid: 92691cd50747ffd4387be64186937ea6, type: 3}
       propertyPath: player
       value: 
@@ -30785,10 +30749,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8455502684682578526, guid: dc52e926fb13b7e4fb374e8fe76f5b1c, type: 3}
-      propertyPath: enemy
-      value: 
-      objectReference: {fileID: 11400000, guid: c5840c659a4c4e74290f01f6e4eca89c, type: 2}
     - target: {fileID: 8455502684682578526, guid: dc52e926fb13b7e4fb374e8fe76f5b1c, type: 3}
       propertyPath: player
       value: 
@@ -51325,10 +51285,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8455502684682578526, guid: dc52e926fb13b7e4fb374e8fe76f5b1c, type: 3}
-      propertyPath: enemy
-      value: 
-      objectReference: {fileID: 11400000, guid: 9345f4afaae50b94f97e494d01ecc4c0, type: 2}
     - target: {fileID: 8455502684682578526, guid: dc52e926fb13b7e4fb374e8fe76f5b1c, type: 3}
       propertyPath: player
       value: 
