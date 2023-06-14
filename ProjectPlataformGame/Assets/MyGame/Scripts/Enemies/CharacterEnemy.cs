@@ -92,18 +92,18 @@ public abstract class CharacterEnemy : MonoBehaviour,IEnemy
         //RaycastHit2D hit = Physics2D.Raycast(point.transform.position, direction, enemy.MaxVision);
         enemy.Hit = Physics2D.Raycast(point.transform.position, direction, enemy.MaxVision);
 
-        if (enemy.Hit.collider != null)
+        if (enemy.Hit.collider != null && enemy.Hit.collider.gameObject.tag == "Player")
         {
             //NÃO APAGAR AINDA. REVISAR CASO NECESSARIO.
             //anim.SetInteger("transition", 0);
-
+            
             if (enemy.Hit.collider.gameObject.tag == "Player")
             {
-                
+
                 isFront = true;
                 float distance = Vector2.Distance(transform.position, enemy.Hit.collider.transform.position);
-                
 
+                
                 if (distance <= enemy.StopDistance)
                 {
                     
