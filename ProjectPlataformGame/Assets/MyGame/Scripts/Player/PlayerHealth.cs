@@ -5,14 +5,14 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour
 {
    
-    private int lifeAnimationIndex;
+    public int lifeAnimationIndex;
 
     public Animator animHud;
 
     public bool wasHited;
     public bool isDead;
 
-    public int life{ get; private set;}
+    public int life{ get;  set;}
 
     private Player player;
     void Start()
@@ -70,6 +70,8 @@ public class PlayerHealth : MonoBehaviour
             StopCoroutine(GameController.instance.GameOver());
 
         }
+        
+        
     }
 
 }

@@ -98,6 +98,8 @@ public class PlayerMovement : MonoBehaviour,IPlayerMovement
             }
             else
             {
+                playerHealth.life = 3;
+                playerHealth.lifeAnimationIndex = 0;
                 AudioController.instance.PlaySong(AudioController.instance.songs[2]);
                 GameController.instance.CheckPoint(this.transform);
             }
