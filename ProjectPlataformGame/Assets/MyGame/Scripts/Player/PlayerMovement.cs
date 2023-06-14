@@ -98,6 +98,7 @@ public class PlayerMovement : MonoBehaviour,IPlayerMovement
             }
             else
             {
+                AudioController.instance.PlaySong(AudioController.instance.songs[2]);
                 GameController.instance.CheckPoint(this.transform);
             }
             
