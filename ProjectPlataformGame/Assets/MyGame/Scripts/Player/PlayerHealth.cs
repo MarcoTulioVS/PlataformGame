@@ -67,8 +67,7 @@ public class PlayerHealth : MonoBehaviour
             lifeAnimationIndex = 0;
             isDead = false;
             player.enabled = true;
-            StopCoroutine(GameController.instance.GameOver());
-
+            
         }
         
         
