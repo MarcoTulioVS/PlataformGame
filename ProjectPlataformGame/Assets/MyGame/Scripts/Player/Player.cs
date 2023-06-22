@@ -23,6 +23,11 @@ public class Player : MonoBehaviour
 
     public bool isDucked { get; private set; }
 
+    private CapsuleCollider2D playerCollider;
+
+    private float colliderSizeY;
+    private float colliderOffsetY;
+
 
     private void Awake()
     {
@@ -31,10 +36,13 @@ public class Player : MonoBehaviour
         playerAttack = GetComponent<IPlayerAttack>();  
         rb = GetComponent<Rigidbody2D>();
 
+        playerCollider = GetComponent<CapsuleCollider2D>();
+
     }
     void Start()
     {
-        
+        colliderSizeY = playerCollider.size.y;
+        colliderOffsetY = playerCollider.offset.y;
     }
 
     
@@ -68,13 +76,17 @@ public class Player : MonoBehaviour
 
             if (playerInput.GetVerticalInput() < 0)
             {
-                
+                playerCollider.size = new Vector2(playerCollider.size.x, 1.26f); 
+                playerCollider.offset = new Vector2(playerCollider.offset.x, -0.4f);
                 playerMovement.MoveVertical();
                 isDucked = true;
                 
             }
             else
             {
+                playerCollider.size = new Vector2(playerCollider.size.x,colliderSizeY);
+                playerCollider.offset = new Vector2(playerCollider.offset.x,colliderOffsetY);
+
                 isDucked = false;
                 playerMovement.isDucking = false;
             }
