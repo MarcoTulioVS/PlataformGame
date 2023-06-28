@@ -14,5 +14,7 @@ public interface IPlayerMovement
 
     public bool isDucking { get; set; }
 
+    public bool narrowArea { get; set; }
+
     void MoveVertical();
 }

@@ -9,10 +9,13 @@ public class PlayerMovement : MonoBehaviour,IPlayerMovement
     public bool IsGrounded { get; set; }
     public bool isFront { get; set; }
     public bool isDucking { get; set; }
+    public bool narrowArea { get ; set ; }
 
     private PlayerHealth playerHealth;
 
     public float timeStopped;
+
+    
 
     private void Awake()
     {
@@ -112,7 +115,20 @@ public class PlayerMovement : MonoBehaviour,IPlayerMovement
             GameController.instance.checkpoint = collision.gameObject.transform;
         }
 
+        if (collision.gameObject.tag == "narrowArea")
+        {
+            narrowArea = true;
+        }
+
         
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "narrowArea")
+        {
+            narrowArea = false;
+        }
     }
     public void MoveVertical()
     {

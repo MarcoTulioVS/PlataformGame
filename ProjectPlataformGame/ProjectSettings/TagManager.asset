@@ -10,6 +10,7 @@ TagManager:
   - final
   - death
   - checkpoint
+  - narrowArea
   layers:
   - Default
   - TransparentFX

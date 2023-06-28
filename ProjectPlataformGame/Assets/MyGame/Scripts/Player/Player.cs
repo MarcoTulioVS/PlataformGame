@@ -74,22 +74,33 @@ public class Player : MonoBehaviour
 
             }
 
-            if (playerInput.GetVerticalInput() < 0)
+            if (!playerMovement.narrowArea)
             {
-                playerCollider.size = new Vector2(playerCollider.size.x, 1.26f); 
-                playerCollider.offset = new Vector2(playerCollider.offset.x, -0.4f);
-                playerMovement.MoveVertical();
-                isDucked = true;
-                
+                if (playerInput.GetVerticalInput() < 0)
+                {
+                    playerCollider.size = new Vector2(playerCollider.size.x, 1.26f);
+                    playerCollider.offset = new Vector2(playerCollider.offset.x, -0.4f);
+                    playerMovement.MoveVertical();
+                    isDucked = true;
+
+                }
+                else
+                {
+                    playerCollider.size = new Vector2(playerCollider.size.x, colliderSizeY);
+                    playerCollider.offset = new Vector2(playerCollider.offset.x, colliderOffsetY);
+
+                    isDucked = false;
+                    playerMovement.isDucking = false;
+                }
             }
             else
             {
-                playerCollider.size = new Vector2(playerCollider.size.x,colliderSizeY);
-                playerCollider.offset = new Vector2(playerCollider.offset.x,colliderOffsetY);
+                playerCollider.size = new Vector2(playerCollider.size.x, 1.26f);
+                playerCollider.offset = new Vector2(playerCollider.offset.x, -0.4f);
+                playerMovement.MoveVertical();
 
-                isDucked = false;
-                playerMovement.isDucking = false;
             }
+            
 
         }//end event system verification
        
