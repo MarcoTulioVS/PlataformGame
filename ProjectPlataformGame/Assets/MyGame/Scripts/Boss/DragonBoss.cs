@@ -15,10 +15,25 @@ public class DragonBoss : MonoBehaviour
     private int randomNumber;
 
     private Animator anim;
+
+    private bool movingFoward;
+
+    [SerializeField]
+    private float movementRangeForward;
+
+    [SerializeField]
+    private float movementRangeBack;
+
+    private Vector2 initialPos;
+
+    private bool inAction;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        initialPos = transform.position;
+
+        StartCoroutine(ExecuteAction());
     }
 
     
@@ -26,53 +41,86 @@ public class DragonBoss : MonoBehaviour
     {
         timeCount += Time.deltaTime;
 
-        ExecuteAction();
+        if (!inAction)
+        {
+            Walk();
+        }
+        
     }
 
-    private void Jump()
+    
+    IEnumerator ExecuteJump()
     {
+
+        inAction = true;
         anim.SetInteger("transition", 2);
-        rb.AddForce(new Vector2(rb.velocity.x, jumpForce),ForceMode2D.Impulse);
+        rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
+        yield return new WaitForSeconds(1.1f);
+        anim.SetInteger("transition", 0);
     }
 
     private void Attack()
     {
+        
+        inAction = true;
         anim.SetInteger("transition", 3);
     }
 
     private void Walk()
     {
         anim.SetInteger("transition", 1);
+
+        if (movingFoward)
+        {
+            transform.eulerAngles = new Vector3(0, 0, 0);
+            rb.velocity = new Vector2(10, 0);
+        }
+        else 
+        {
+            transform.eulerAngles = new Vector3(0, 180, 0);
+            rb.velocity = new Vector2(-10, 0);
+        }
+
+
+        if (Vector2.Distance(transform.position, initialPos) >= movementRangeForward)
+        {
+            movingFoward = false;
+
+        }
+
+        if (Vector2.Distance(transform.position, initialPos) <= movementRangeForward - movementRangeBack)
+        {
+            movingFoward = true;
+
+        }
     }
+
+   
 
     private void Stop()
     {
         anim.SetInteger("transition", 0);
     }
 
-    private void ExecuteAction()
-    {
-        if (randomNumber != 1 && randomNumber!=2)
-        {
-            Walk();
-        }
+    IEnumerator ExecuteAction()
+    { 
+        yield return new WaitForSeconds(3);
+        StartCoroutine(ExecuteJump());
 
-        if (timeCount >= 3)
-        {
-            randomNumber = Random.Range(1, 5);
-            Debug.Log(randomNumber);
-            timeCount = 0;
+        yield return new WaitForSeconds(2);
+        Attack();
 
-            if (randomNumber == 1)
-            {
-                Jump();
-            }
-            else if(randomNumber == 2)
-            {
-                Attack();
-            }
-            
-            
-        }
+        yield return new WaitForSeconds(1);
+
+        inAction = false;
+
+        yield return new WaitForSeconds(2.2f);
+        Attack();
+
+        inAction = false;
+        StartCoroutine(ExecuteAction());
+        
     }
+
+    
 }
