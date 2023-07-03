@@ -12,8 +12,6 @@ public class DragonBoss : MonoBehaviour
     [SerializeField]
     private float jumpForce;
 
-    private int randomNumber;
-
     private Animator anim;
 
     private bool movingFoward;
@@ -27,6 +25,19 @@ public class DragonBoss : MonoBehaviour
     private Vector2 initialPos;
 
     private bool inAction;
+
+    public Transform pointAttack;
+
+    public Rigidbody2D rbPrefab;
+
+    private Rigidbody2D rbProjectile;
+
+    [SerializeField]
+    private float projectileSpeed;
+
+    private bool shootSpawned;
+
+    
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -63,7 +74,36 @@ public class DragonBoss : MonoBehaviour
     {
         
         inAction = true;
+        
         anim.SetInteger("transition", 3);
+
+
+        if (!shootSpawned)
+        {
+
+            shootSpawned = true;
+            rbProjectile = Instantiate(rbPrefab, pointAttack.position, rbPrefab.transform.rotation);
+
+
+            if (movingFoward)
+            {
+
+                rbProjectile.transform.eulerAngles = new Vector3(0, 0, 90);
+                rbProjectile.velocity = new Vector2(projectileSpeed, 0);
+
+            }
+            else
+            {
+
+                rbProjectile.transform.eulerAngles = new Vector3(0, 180, 90);
+                rbProjectile.velocity = new Vector2(-projectileSpeed, 0);
+
+            }
+
+            Destroy(rbProjectile.gameObject, 1);
+        }
+
+        
     }
 
     private void Walk()
@@ -97,11 +137,6 @@ public class DragonBoss : MonoBehaviour
 
    
 
-    private void Stop()
-    {
-        anim.SetInteger("transition", 0);
-    }
-
     IEnumerator ExecuteAction()
     { 
         yield return new WaitForSeconds(3);
@@ -109,15 +144,18 @@ public class DragonBoss : MonoBehaviour
 
         yield return new WaitForSeconds(2);
         Attack();
-
+        
         yield return new WaitForSeconds(1);
 
         inAction = false;
-
+        
         yield return new WaitForSeconds(2.2f);
+        
         Attack();
-
+        
         inAction = false;
+        shootSpawned = false;
+
         StartCoroutine(ExecuteAction());
         
     }
