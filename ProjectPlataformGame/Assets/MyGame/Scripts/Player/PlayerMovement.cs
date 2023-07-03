@@ -120,6 +120,13 @@ public class PlayerMovement : MonoBehaviour,IPlayerMovement
             narrowArea = true;
         }
 
+        if (collision.gameObject.tag == "boss")
+        {
+            ActiveBoss.instance.activeBoss = true;
+            ActiveBoss.instance.blockWall.SetActive(true);
+            collision.gameObject.SetActive(false);
+            
+        }
         
     }
 

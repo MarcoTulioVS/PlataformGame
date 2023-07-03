@@ -37,14 +37,21 @@ public class DragonBoss : MonoBehaviour
 
     private bool shootSpawned;
 
+    public static DragonBoss instance;
+
+    
+
     
     void Start()
     {
+        instance = this;
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         initialPos = transform.position;
-
+        
         StartCoroutine(ExecuteAction());
+        
+        
     }
 
     
@@ -55,6 +62,7 @@ public class DragonBoss : MonoBehaviour
         if (!inAction)
         {
             Walk();
+            
         }
         
     }
@@ -138,25 +146,27 @@ public class DragonBoss : MonoBehaviour
    
 
     IEnumerator ExecuteAction()
-    { 
+    {
         yield return new WaitForSeconds(3);
         StartCoroutine(ExecuteJump());
 
         yield return new WaitForSeconds(2);
         Attack();
-        
+
         yield return new WaitForSeconds(1);
 
         inAction = false;
-        
+
         yield return new WaitForSeconds(2.2f);
-        
+
         Attack();
-        
+
         inAction = false;
         shootSpawned = false;
 
         StartCoroutine(ExecuteAction());
+        
+        
         
     }
 
