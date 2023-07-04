@@ -42,12 +42,19 @@ public class DragonBoss : MonoBehaviour
     public float life;
 
     public Image imgLifeBar;
-    
+
+    [SerializeField]
+    private float speed;
+
+    public DragonBoss script;
+
+    private CircleCollider2D coll;
     void Start()
     {
         instance = this;
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        coll = GetComponent<CircleCollider2D>();
         initialPos = transform.position;
         
         StartCoroutine(ExecuteAction());
@@ -62,7 +69,7 @@ public class DragonBoss : MonoBehaviour
 
         imgLifeBar.fillAmount = life / 100;
 
-        if (!inAction)
+        if (!inAction && life>0)
         {
             Walk();
             
@@ -124,12 +131,12 @@ public class DragonBoss : MonoBehaviour
         if (movingFoward)
         {
             transform.eulerAngles = new Vector3(0, 0, 0);
-            rb.velocity = new Vector2(10, 0);
+            rb.velocity = new Vector2(speed, 0);
         }
         else 
         {
             transform.eulerAngles = new Vector3(0, 180, 0);
-            rb.velocity = new Vector2(-10, 0);
+            rb.velocity = new Vector2(-speed, 0);
         }
 
 
@@ -169,9 +176,38 @@ public class DragonBoss : MonoBehaviour
 
         StartCoroutine(ExecuteAction());
         
-        
-        
     }
 
-    
+    private void DecrementLife(float value)
+    {
+        if (life > 0)
+        {
+            life -= value;
+        }
+
+        if (life <= 0)
+        {
+            StopAllCoroutines();
+            
+            life = 0;
+            speed = 0;
+            coll.enabled = false;
+            rb.gravityScale = 0;
+            rb.constraints = RigidbodyConstraints2D.FreezeAll;
+            anim.SetInteger("transition", 4);
+            ActiveBoss.instance.activeBoss = false;
+            script.enabled = false;
+            
+        }
+        
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "shoot")
+        {
+            DecrementLife(10);
+        }
+    }
+
+
 }

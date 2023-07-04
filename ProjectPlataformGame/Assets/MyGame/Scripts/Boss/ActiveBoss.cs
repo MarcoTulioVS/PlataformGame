@@ -11,6 +11,8 @@ public class ActiveBoss : MonoBehaviour
     private DragonBoss dragonBossScript;
 
     public GameObject blockWall;
+
+    public GameObject lifeBarBoss;
     void Start()
     {
         instance = this;
@@ -23,6 +25,8 @@ public class ActiveBoss : MonoBehaviour
         if (activeBoss)
         {
             dragonBossScript.enabled = true;
+            lifeBarBoss.SetActive(true);
         }
+        
     }
 }
