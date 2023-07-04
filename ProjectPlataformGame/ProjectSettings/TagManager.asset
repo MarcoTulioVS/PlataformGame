@@ -13,6 +13,7 @@ TagManager:
   - narrowArea
   - boss
   - shootBoss
+  - ending
   layers:
   - Default
   - TransparentFX
