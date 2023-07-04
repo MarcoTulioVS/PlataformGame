@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class DragonBoss : MonoBehaviour
 {
 
@@ -39,8 +39,9 @@ public class DragonBoss : MonoBehaviour
 
     public static DragonBoss instance;
 
-    
+    public float life;
 
+    public Image imgLifeBar;
     
     void Start()
     {
@@ -58,6 +59,8 @@ public class DragonBoss : MonoBehaviour
     void Update()
     {
         timeCount += Time.deltaTime;
+
+        imgLifeBar.fillAmount = life / 100;
 
         if (!inAction)
         {
