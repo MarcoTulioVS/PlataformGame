@@ -12,6 +12,7 @@ TagManager:
   - checkpoint
   - narrowArea
   - boss
+  - shootBoss
   layers:
   - Default
   - TransparentFX

@@ -74,6 +74,11 @@ public class PlayerMovement : MonoBehaviour,IPlayerMovement
             StartCoroutine(playerHealth.DecrementLife());
         }
 
+        if (collision.gameObject.layer == 7)//Collision with enemy
+        {
+            StartCoroutine(playerHealth.DecrementLife());
+        }
+
     }
 
     
@@ -126,6 +131,11 @@ public class PlayerMovement : MonoBehaviour,IPlayerMovement
             ActiveBoss.instance.blockWall.SetActive(true);
             collision.gameObject.SetActive(false);
             
+        }
+
+        if (collision.gameObject.tag == "shootBoss")
+        {
+            StartCoroutine(playerHealth.DecrementLife());
         }
         
     }

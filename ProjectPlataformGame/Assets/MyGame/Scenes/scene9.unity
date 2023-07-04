@@ -8551,7 +8551,7 @@ GameObject:
   - component: {fileID: 713569430}
   - component: {fileID: 713569426}
   - component: {fileID: 713569431}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: dragon-boss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
