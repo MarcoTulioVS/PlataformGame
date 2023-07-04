@@ -2,20 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerEnding : MonoBehaviour
+public class CompanionEnding : MonoBehaviour
 {
-    private Rigidbody2D rb;
-
     [SerializeField]
     private float speed;
 
-    public bool isMoving;
+    private bool isMoving;
 
-    private Animator anim;
+    private Rigidbody2D rb;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
         isMoving = true;
     }
 
@@ -30,29 +28,26 @@ public class PlayerEnding : MonoBehaviour
         {
             Move();
         }
-          
+        
     }
 
     private void Move()
     {
-        anim.SetInteger("transition", 1);
         rb.velocity = new Vector2(speed,rb.velocity.y);
-        
     }
 
     private void Stop()
     {
-        anim.SetInteger("transition", 0);
-        speed = 0;
         rb.velocity = Vector2.zero;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "ending")
+        if (collision.gameObject.tag == "dragon")
         {
             isMoving = false;
-            
+
         }
     }
 }

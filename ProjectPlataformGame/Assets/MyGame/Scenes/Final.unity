@@ -128,23 +128,27 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 615711003}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 8014161131854902340, guid: c0f8293eb656f5d4ca370f5278b0455a, type: 3}
       propertyPath: m_Name
       value: dragon-attack
       objectReference: {fileID: 0}
+    - target: {fileID: 8014161131854902340, guid: c0f8293eb656f5d4ca370f5278b0455a, type: 3}
+      propertyPath: m_TagString
+      value: dragon
+      objectReference: {fileID: 0}
     - target: {fileID: 8014161131854902341, guid: c0f8293eb656f5d4ca370f5278b0455a, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8014161131854902341, guid: c0f8293eb656f5d4ca370f5278b0455a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.8800003
+      value: -14.14
       objectReference: {fileID: 0}
     - target: {fileID: 8014161131854902341, guid: c0f8293eb656f5d4ca370f5278b0455a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.61
+      value: -3.6100001
       objectReference: {fileID: 0}
     - target: {fileID: 8014161131854902341, guid: c0f8293eb656f5d4ca370f5278b0455a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -310,6 +314,61 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &331483433 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8014161131854902340, guid: c0f8293eb656f5d4ca370f5278b0455a, type: 3}
+  m_PrefabInstance: {fileID: 188694309}
+  m_PrefabAsset: {fileID: 0}
+--- !u!58 &331483434
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 331483433}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.026784535, y: -0.073664464}
+  serializedVersion: 2
+  m_Radius: 0.41294217
+--- !u!50 &331483435
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 331483433}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 6
+--- !u!114 &331483438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 331483433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3baf212ddbaf784189914056a0533bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
 --- !u!1 &475766080
 GameObject:
   m_ObjectHideFlags: 0
@@ -361,11 +420,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 475766080}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.5462188, y: -3.43, z: -16.968357}
+  m_LocalPosition: {x: -4.55, y: -3.43, z: -16.968357}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &615710999
 GameObject:
@@ -484,10 +543,9 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -15.02, y: -3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1312499836}
+  m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &615711004
 Rigidbody2D:
@@ -522,7 +580,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 380db474bbcf2354683abd7c07f031cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
+  speed: 3
+  isMoving: 0
 --- !u!1 &757411437
 GameObject:
   m_ObjectHideFlags: 0
@@ -1512,11 +1571,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!4 &1312499836 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8014161131854902341, guid: c0f8293eb656f5d4ca370f5278b0455a, type: 3}
-  m_PrefabInstance: {fileID: 188694309}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1374035244
 GameObject:
   m_ObjectHideFlags: 0
@@ -1673,8 +1727,8 @@ GameObject:
   - component: {fileID: 2002515928}
   - component: {fileID: 2002515927}
   - component: {fileID: 2002515926}
-  - component: {fileID: 2002515925}
   - component: {fileID: 2002515929}
+  - component: {fileID: 2002515925}
   m_Layer: 7
   m_Name: dragon-boss
   m_TagString: Untagged
@@ -1682,8 +1736,8 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!58 &2002515925
-CircleCollider2D:
+--- !u!61 &2002515925
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1695,9 +1749,19 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.07026478}
+  m_Offset: {x: 0.03637454, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Radius: 0.39069924
+  m_Size: {x: 0.9272508, y: 1}
+  m_EdgeRadius: 0
 --- !u!95 &2002515926
 Animator:
   serializedVersion: 3
@@ -1781,7 +1845,7 @@ Transform:
   m_Children:
   - {fileID: 1548476278}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2002515929
 MonoBehaviour:

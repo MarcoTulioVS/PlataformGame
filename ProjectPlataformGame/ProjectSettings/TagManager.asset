@@ -14,6 +14,7 @@ TagManager:
   - boss
   - shootBoss
   - ending
+  - dragon
   layers:
   - Default
   - TransparentFX
