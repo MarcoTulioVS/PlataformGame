@@ -18,7 +18,7 @@ public class ProjectileCollision : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.layer!=7)//Quando colidir com qualquer coisa que nao seja inimigo
+        if(collision.gameObject.layer!=7 && collision.gameObject.tag!="narrowArea")//Quando colidir com qualquer coisa que nao seja inimigo
         {
             gameObject.SetActive(false);
         }

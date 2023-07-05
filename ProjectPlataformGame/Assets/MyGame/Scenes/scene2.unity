@@ -2018,13 +2018,13 @@ Transform:
   m_LocalPosition: {x: 16.850042, y: -11.85, z: -21.0752}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 956517743}
   - {fileID: 601611393}
   - {fileID: 142144427}
   - {fileID: 1526200582}
   - {fileID: 399457779}
   - {fileID: 1214382211}
   - {fileID: 18122217}
+  - {fileID: 956517743}
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -16544,7 +16544,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 903782637}
-  m_BodyType: 0
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -24279,7 +24279,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2089876895}
-  m_BodyType: 0
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
