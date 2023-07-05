@@ -24,4 +24,11 @@ public class AudioController : MonoBehaviour
     {
         audioSource.PlayOneShot (audio);
     }
+
+    public void SwitchSong(AudioClip audio)
+    {
+        audioSource.clip = audio;
+        audioSource.Play();
+
+    }
 }

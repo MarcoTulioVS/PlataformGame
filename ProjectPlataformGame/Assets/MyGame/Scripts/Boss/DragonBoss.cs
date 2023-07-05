@@ -52,6 +52,8 @@ public class DragonBoss : MonoBehaviour
 
     public GameObject endWall;
     public GameObject blockWall;
+
+    
     void Start()
     {
         instance = this;
@@ -191,7 +193,8 @@ public class DragonBoss : MonoBehaviour
         if (life <= 0)
         {
             StopAllCoroutines();
-            
+
+            AudioController.instance.SwitchSong(AudioController.instance.songs[7]);
             life = 0;
             speed = 0;
             coll.enabled = false;
