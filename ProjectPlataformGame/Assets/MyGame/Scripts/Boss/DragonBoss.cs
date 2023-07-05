@@ -49,6 +49,9 @@ public class DragonBoss : MonoBehaviour
     public DragonBoss script;
 
     private CircleCollider2D coll;
+
+    public GameObject endWall;
+    public GameObject blockWall;
     void Start()
     {
         instance = this;
@@ -195,6 +198,8 @@ public class DragonBoss : MonoBehaviour
             rb.gravityScale = 0;
             rb.constraints = RigidbodyConstraints2D.FreezeAll;
             anim.SetInteger("transition", 4);
+            endWall.SetActive(false);
+            blockWall.SetActive(false);
             ActiveBoss.instance.activeBoss = false;
             script.enabled = false;
             
