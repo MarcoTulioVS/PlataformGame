@@ -1,15 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class CompanionEnding : MonoBehaviour
 {
     [SerializeField]
     private float speed;
 
+    
     private bool isMoving;
 
     private Rigidbody2D rb;
+
+    public GameObject fadeScreen;
+    public Text textScreen;
+    public Text textScreenEnd;
 
     void Start()
     {
@@ -39,6 +45,7 @@ public class CompanionEnding : MonoBehaviour
     private void Stop()
     {
         rb.velocity = Vector2.zero;
+        StartCoroutine("FadeScreen");
     }
 
     
@@ -49,5 +56,18 @@ public class CompanionEnding : MonoBehaviour
             isMoving = false;
 
         }
+    }
+
+    private IEnumerator FadeScreen()
+    {
+        yield return new WaitForSeconds(5);
+        fadeScreen.SetActive(true);
+        yield return new WaitForSeconds(3);
+        textScreen.enabled = true;
+        yield return new WaitForSeconds(2);
+        textScreenEnd.enabled = true;
+        yield return new WaitForSeconds(2);
+        SceneManager.LoadScene(0);
+
     }
 }

@@ -160,4 +160,6 @@ public class GameController : MonoBehaviour
     {
         target.position = checkpoint.localPosition;
     }
+
+    
 }
