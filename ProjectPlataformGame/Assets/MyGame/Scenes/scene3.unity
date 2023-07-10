@@ -14905,7 +14905,6 @@ GameObject:
   - component: {fileID: 946857600}
   - component: {fileID: 946857601}
   - component: {fileID: 946857596}
-  - component: {fileID: 946857602}
   m_Layer: 0
   m_Name: player
   m_TagString: Player
@@ -15006,7 +15005,7 @@ CapsuleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 946857590}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -15118,22 +15117,6 @@ MonoBehaviour:
   animHud: {fileID: 65584747}
   wasHited: 0
   isDead: 0
---- !u!58 &946857602
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 946857590}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.019984752, y: -0.37972724}
-  serializedVersion: 2
-  m_Radius: 0.6566081
 --- !u!1 &963752785
 GameObject:
   m_ObjectHideFlags: 0
