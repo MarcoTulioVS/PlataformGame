@@ -87,8 +87,12 @@ public class PlayerMovement : MonoBehaviour,IPlayerMovement
     {
         if (collision.gameObject.tag == "life")
         {
+            
+            if(playerHealth.life < 3)
+            {
+                Destroy(collision.gameObject);
+            }
             playerHealth.IncrementLife();
-            Destroy(collision.gameObject);
         }
 
         if (collision.gameObject.tag == "final")

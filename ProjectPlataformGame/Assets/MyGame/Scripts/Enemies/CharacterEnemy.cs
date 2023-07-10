@@ -130,7 +130,7 @@ public abstract class CharacterEnemy : MonoBehaviour,IEnemy
 
             }
         }
-        else
+        else 
         {
             isFront = false;
             rb.velocity = Vector2.zero;
@@ -149,6 +149,7 @@ public abstract class CharacterEnemy : MonoBehaviour,IEnemy
                 isFront = true;
             }
         }
+        
     }
 
     protected virtual void OnTriggerEnter2D(Collider2D collision)
