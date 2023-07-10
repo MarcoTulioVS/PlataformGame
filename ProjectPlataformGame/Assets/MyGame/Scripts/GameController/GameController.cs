@@ -29,6 +29,7 @@ public class GameController : MonoBehaviour
 
     public Transform checkpoint;
     public bool checkpointActive;
+    public Text checkpointText;
     
     void Awake()
     {
@@ -161,5 +162,12 @@ public class GameController : MonoBehaviour
         target.position = checkpoint.localPosition;
     }
 
+    public IEnumerator CheckpointMessage()
+    {
+        checkpointText.enabled = true;
+        yield return new WaitForSeconds(3);
+        checkpointText.enabled = false;
+        StopCoroutine(CheckpointMessage());
+    }
     
 }

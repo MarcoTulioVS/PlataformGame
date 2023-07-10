@@ -122,6 +122,7 @@ public class PlayerMovement : MonoBehaviour,IPlayerMovement
         {
             GameController.instance.checkpointActive = true;
             GameController.instance.checkpoint = collision.gameObject.transform;
+            StartCoroutine(GameController.instance.CheckpointMessage());
         }
 
         if (collision.gameObject.tag == "narrowArea")
