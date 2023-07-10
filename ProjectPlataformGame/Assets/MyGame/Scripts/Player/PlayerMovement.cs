@@ -92,6 +92,10 @@ public class PlayerMovement : MonoBehaviour,IPlayerMovement
             {
                 Destroy(collision.gameObject);
             }
+            else
+            {
+                StartCoroutine(GameController.instance.ShowMessage(GameController.instance.lifeFullText));
+            }
             playerHealth.IncrementLife();
         }
 
@@ -122,7 +126,7 @@ public class PlayerMovement : MonoBehaviour,IPlayerMovement
         {
             GameController.instance.checkpointActive = true;
             GameController.instance.checkpoint = collision.gameObject.transform;
-            StartCoroutine(GameController.instance.CheckpointMessage());
+            StartCoroutine(GameController.instance.ShowMessage(GameController.instance.checkpointText));
         }
 
         if (collision.gameObject.tag == "narrowArea")
