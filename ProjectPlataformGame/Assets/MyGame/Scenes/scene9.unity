@@ -8700,7 +8700,7 @@ MonoBehaviour:
   pointAttack: {fileID: 172648919}
   rbPrefab: {fileID: 7498663558780890307, guid: c03451846103c6b44a4e0e5a0994dbf2, type: 3}
   projectileSpeed: 10
-  life: 30
+  life: 100
   imgLifeBar: {fileID: 977065074}
   speed: 10
   script: {fileID: 713569430}
