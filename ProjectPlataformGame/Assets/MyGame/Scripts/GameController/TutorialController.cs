@@ -12,6 +12,8 @@ public class TutorialController : MonoBehaviour
     private int indexDialog;
 
     public PlayerMovement playerMovement;
+
+    private bool tutorialActive;
     private void Awake()
     {
         instance = this;
@@ -30,15 +32,30 @@ public class TutorialController : MonoBehaviour
 
     public void ShowDialogBox()
     {
+        tutorialActive = true;
+        Time.timeScale = 0;
         dialogBox.SetActive(true);
         
     }
 
     private void NextDialog()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Fire1"))
         {
-            indexDialog++;
+            if (tutorialActive)
+            {
+                indexDialog++;
+            }
+
+            if (indexDialog == playerMovement.tutorialObj.GetComponent<Tutorial>().dialogContentList.Count)
+            {
+                tutorialActive=false;
+                Time.timeScale = 1;
+                indexDialog = 0;
+                dialogBox.SetActive(false);
+                
+            }
+            
         }
        
     }
