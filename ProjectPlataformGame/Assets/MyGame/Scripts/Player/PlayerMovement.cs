@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour,IPlayerMovement
 
     public float timeStopped;
 
-    
+    public GameObject tutorialObj;
 
     private void Awake()
     {
@@ -81,14 +81,14 @@ public class PlayerMovement : MonoBehaviour,IPlayerMovement
 
     }
 
-    
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "life")
         {
-            
-            if(playerHealth.life < 3)
+
+            if (playerHealth.life < 3)
             {
                 Destroy(collision.gameObject);
             }
@@ -108,7 +108,7 @@ public class PlayerMovement : MonoBehaviour,IPlayerMovement
         {
             if (!GameController.instance.checkpointActive)
             {
-                
+
                 StartCoroutine(GameController.instance.GameOver());
                 AudioController.instance.PlaySong(AudioController.instance.songs[2]);
             }
@@ -119,7 +119,7 @@ public class PlayerMovement : MonoBehaviour,IPlayerMovement
                 AudioController.instance.PlaySong(AudioController.instance.songs[2]);
                 GameController.instance.CheckPoint(this.transform);
             }
-            
+
         }
 
         if (collision.gameObject.tag == "checkpoint")
@@ -139,12 +139,19 @@ public class PlayerMovement : MonoBehaviour,IPlayerMovement
             ActiveBoss.instance.activeBoss = true;
             ActiveBoss.instance.blockWall.SetActive(true);
             collision.gameObject.SetActive(false);
-            
+
         }
 
         if (collision.gameObject.tag == "shootBoss")
         {
             StartCoroutine(playerHealth.DecrementLife());
+        }
+
+        if (collision.gameObject.tag == "tutorial")
+        {
+            tutorialObj = collision.gameObject;
+            TutorialController.instance.ShowDialogBox();
+            
         }
         
     }

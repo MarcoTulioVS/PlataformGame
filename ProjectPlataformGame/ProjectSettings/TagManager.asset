@@ -15,6 +15,7 @@ TagManager:
   - shootBoss
   - ending
   - dragon
+  - tutorial
   layers:
   - Default
   - TransparentFX
