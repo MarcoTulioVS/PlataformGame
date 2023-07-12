@@ -53,11 +53,21 @@ public class TutorialController : MonoBehaviour
                 Time.timeScale = 1;
                 indexDialog = 0;
                 dialogBox.SetActive(false);
+                StartCoroutine("ShowScreenTutorial");
+                playerMovement.tutorialObj.SetActive(false);
                 
+
             }
             
         }
        
+    }
+
+    IEnumerator ShowScreenTutorial()
+    {
+        playerMovement.tutorialObj.GetComponent<Tutorial>().tutorialScreen.SetActive(true);
+        yield return new WaitForSeconds(2.5f);
+        playerMovement.tutorialObj.GetComponent<Tutorial>().tutorialScreen.SetActive(false);
     }
 
     
