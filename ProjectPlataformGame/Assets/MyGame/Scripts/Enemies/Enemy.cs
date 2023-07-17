@@ -24,6 +24,8 @@ public class Enemy : ScriptableObject
 
     private RaycastHit2D hit;
     private RaycastHit2D behindHit;
+
+    public RaycastHit2D plantHit;
     public float MaxVision { get { return this.maxVision; } set { this.maxVision = value; } }
 
     public float StopDistance { get { return this.stopDistance; } set { this.stopDistance = value; } }

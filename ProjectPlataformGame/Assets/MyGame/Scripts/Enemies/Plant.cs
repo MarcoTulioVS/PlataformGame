@@ -4,10 +4,23 @@ using UnityEngine;
 
 public class Plant : CharacterEnemy
 {
+    public Rigidbody2D target;
+
+    public GameObject particleObject;
+
+    [SerializeField]
+    private float radiusSuck;
+
+    private Vector2 directionPlant;
+
+    public GameObject pointSuck;
+
     
     void Start()
     {
         enemy.IsReady = false;
+        directionPlant = Vector2.left;
+
         
     }
 
@@ -15,6 +28,8 @@ public class Plant : CharacterEnemy
     void Update()
     {
         HitPlayer();
+        Suck();
+        
     }
 
     public override void HitPlayer()
@@ -56,5 +71,44 @@ public class Plant : CharacterEnemy
        
         
     }
+
+    //Trabalhar nesse metodo para fazer funcionar da maneira correta
+    public void Suck()
+    {
+        //Collider2D hit = Physics2D.OverlapCircle(behindPoint.transform.position,radiusSuck);
+
+
+        enemy.plantHit = Physics2D.Raycast(behindPoint.transform.position, directionPlant, enemy.MaxVision) ;
+       
+        if (enemy.plantHit.collider != null && enemy.plantHit.collider.gameObject.tag=="Player")
+        {
+            
+            if (enemy.plantHit.collider.tag == "Player" && !isDead)
+            {
+                particleObject.SetActive(true);
+                anim.SetInteger("transition", 3);
+                target.velocity = Vector2.right * 3;
+            }
+
+        }
+        else if(enemy.plantHit.collider == null && !isDead)
+        {
+            particleObject.SetActive(false);
+            anim.SetInteger("transition", 0);
+            
+        }
+
+        
+        
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawRay(behindPoint.position, directionPlant * enemy.MaxVision);
+    }
+
+
+
 
 }

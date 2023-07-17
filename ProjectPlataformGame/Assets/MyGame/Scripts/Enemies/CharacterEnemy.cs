@@ -17,6 +17,8 @@ public abstract class CharacterEnemy : MonoBehaviour,IEnemy
     public bool isFront { get ; set ; }
     public bool isRight { get ; set ; }
 
+    public bool isDead { get; set; }
+
     public Animator anim { get; private set; }
 
     public PlayerHealth playerHealth;
@@ -156,10 +158,13 @@ public abstract class CharacterEnemy : MonoBehaviour,IEnemy
     {
         if (collision.gameObject.tag == "shoot")
         {
+            isDead = true;
             enemy.Speed = 0;
             anim.SetInteger("transition", 2);
             AudioController.instance.PlaySong(AudioController.instance.songs[3]);
             Destroy(gameObject, 0.5f);
         }
     }
+
+    
 }
