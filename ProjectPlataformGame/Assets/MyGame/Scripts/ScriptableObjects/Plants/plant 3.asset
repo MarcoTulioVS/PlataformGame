@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ed8f28169dddc64983b6ef3d9497926, type: 3}
   m_Name: plant 3
   m_EditorClassIdentifier: 
-  maxVision: 4
+  maxVision: 1
   stopDistance: 0
   auxSpeed: 0
   radius: 0.49
