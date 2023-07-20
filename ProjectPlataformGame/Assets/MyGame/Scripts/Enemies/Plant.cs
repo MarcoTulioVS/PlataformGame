@@ -13,7 +13,7 @@ public class Plant : CharacterEnemy
 
     private Vector2 directionPlant;
 
-    public GameObject pointSuck;
+    //public GameObject pointSuck;
 
     
     void Start()
