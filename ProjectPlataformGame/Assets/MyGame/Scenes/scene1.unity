@@ -33149,8 +33149,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   time: 0
-  maxTime: 20
+  maxTime: 12
   playerHealth: {fileID: 946857601}
+  playerSprite: {fileID: 946857591}
 --- !u!1001 &1154728082
 PrefabInstance:
   m_ObjectHideFlags: 0

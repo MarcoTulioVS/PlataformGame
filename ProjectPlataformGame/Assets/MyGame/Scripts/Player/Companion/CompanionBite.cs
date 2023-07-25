@@ -11,9 +11,13 @@ public class CompanionBite : MonoBehaviour
 
     [SerializeField]
     private PlayerHealth playerHealth;
+
+    public SpriteRenderer playerSprite;
+    
+    private CompanionAnimation anim;
     void Start()
     {
-        
+        anim = GetComponent<CompanionAnimation>();
     }
 
     
@@ -31,6 +35,7 @@ public class CompanionBite : MonoBehaviour
             {
 
                 StartCoroutine(playerHealth.DecrementLife());
+                StartCoroutine("BlinkPlayerDamage");
                 time = 0;
             }
         }
@@ -39,5 +44,14 @@ public class CompanionBite : MonoBehaviour
             GameController.instance.gameTimeText.enabled = false;
         }
         
+    }
+
+    IEnumerator BlinkPlayerDamage()
+    {
+        playerSprite.color = Color.gray;
+        anim.ExecuteAnimation(2);
+        yield return new WaitForSeconds(0.1f);
+        playerSprite.color = Color.white;
+        anim.ExecuteAnimation(0);
     }
 }
