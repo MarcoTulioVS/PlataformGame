@@ -32,6 +32,12 @@ public class GameController : MonoBehaviour
     public Text checkpointText;
 
     public Text lifeFullText;
+
+    public Text gameTimeText;
+
+    [SerializeField]
+    private CompanionBite companionBite;
+
     void Awake()
     {
         instance = this;
@@ -43,7 +49,7 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        gameTimeText.text = companionBite.time.ToString();
     }
 
     public IEnumerator GameOver()
