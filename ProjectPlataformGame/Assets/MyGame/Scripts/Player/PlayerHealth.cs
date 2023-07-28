@@ -63,6 +63,7 @@ public class PlayerHealth : MonoBehaviour
         else if(life==0 && GameController.instance.checkpointActive)
         {
             GameController.instance.CheckPoint(this.transform);
+            GameController.instance.ActivateAllCarrotsLife();
             life = 3;
             lifeAnimationIndex = 0;
             isDead = false;

@@ -38,6 +38,9 @@ public class GameController : MonoBehaviour
     [SerializeField]
     private CompanionBite companionBite;
 
+    [SerializeField]
+    private List<GameObject> carrotsLife = new List<GameObject>();
+
     void Awake()
     {
         instance = this;
@@ -175,6 +178,14 @@ public class GameController : MonoBehaviour
         yield return new WaitForSeconds(3);
         message.enabled = false;
         StopCoroutine("ShowMessage");
+    }
+
+    public void ActivateAllCarrotsLife()
+    {
+        foreach(GameObject carrot in carrotsLife)
+        {
+            carrot.SetActive(true);
+        }
     }
 
    

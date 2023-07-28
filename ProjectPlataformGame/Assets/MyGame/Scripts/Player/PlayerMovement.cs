@@ -90,7 +90,8 @@ public class PlayerMovement : MonoBehaviour,IPlayerMovement
 
             if (playerHealth.life < 3)
             {
-                Destroy(collision.gameObject);
+                //Destroy(collision.gameObject);
+                collision.gameObject.SetActive(false);
             }
             else
             {
@@ -116,6 +117,7 @@ public class PlayerMovement : MonoBehaviour,IPlayerMovement
             {
                 playerHealth.life = 3;
                 playerHealth.lifeAnimationIndex = 0;
+                GameController.instance.ActivateAllCarrotsLife();
                 AudioController.instance.PlaySong(AudioController.instance.songs[2]);
                 GameController.instance.CheckPoint(this.transform);
             }
