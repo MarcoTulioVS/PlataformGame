@@ -17,11 +17,14 @@ public class PlayerMovement : MonoBehaviour,IPlayerMovement
 
     public GameObject tutorialObj;
 
+    private CompanionBite companion;
+
     private void Awake()
     {
         isFront = true;
         playerAnimation = GetComponent<PlayerAnimation>();
         playerHealth = GetComponent<PlayerHealth>();
+        companion = GetComponentInChildren<CompanionBite>();
     }
 
     public void Move(Vector3 direction, float speed)
@@ -118,6 +121,7 @@ public class PlayerMovement : MonoBehaviour,IPlayerMovement
                 playerHealth.life = 3;
                 playerHealth.lifeAnimationIndex = 0;
                 GameController.instance.ActivateAllCarrotsLife();
+                companion.time = 0;
                 AudioController.instance.PlaySong(AudioController.instance.songs[2]);
                 GameController.instance.CheckPoint(this.transform);
             }
