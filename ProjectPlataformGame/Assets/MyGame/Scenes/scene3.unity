@@ -7018,7 +7018,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -7.181488, y: -10.5261}
+  m_AnchoredPosition: {x: -7.1815186, y: -10.526093}
   m_SizeDelta: {x: -545.0365, y: -284.8679}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &714684523
@@ -26908,7 +26908,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   time: 0
-  maxTime: 0
+  maxTime: 10
   playerHealth: {fileID: 946857601}
   playerSprite: {fileID: 946857591}
 --- !u!1001 &1610502615

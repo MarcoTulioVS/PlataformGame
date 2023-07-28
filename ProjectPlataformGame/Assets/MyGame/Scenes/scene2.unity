@@ -46507,7 +46507,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   time: 0
-  maxTime: 0
+  maxTime: 10
   playerHealth: {fileID: 946857601}
   playerSprite: {fileID: 946857591}
 --- !u!1 &1601600976
