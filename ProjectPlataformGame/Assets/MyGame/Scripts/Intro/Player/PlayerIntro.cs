@@ -13,21 +13,29 @@ public class PlayerIntro : MonoBehaviour
 
     private Animator anim;
 
+    private bool activeMove;
+    
     void Start()
     {
+        activeMove = true;
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
     }
 
-    
     void Update()
     {
-        Move();
-
-        if (isStopped)
+        if (activeMove)
         {
-            Stop();
+            if (isStopped)
+            {
+                Stop();
+            }
+            else
+            {
+                Move();
+            }
         }
+        
     }
 
     private void Move()
@@ -37,8 +45,11 @@ public class PlayerIntro : MonoBehaviour
 
     private void Stop()
     {
+        DialogIntro.instance.dialogBox.SetActive(true);
+        DialogIntro.instance.dialogOn = true;
         rb.velocity = Vector3.zero;
         anim.SetInteger("transition", 0);
+        activeMove = false;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -49,5 +60,4 @@ public class PlayerIntro : MonoBehaviour
         }
     }
 
-    
 }

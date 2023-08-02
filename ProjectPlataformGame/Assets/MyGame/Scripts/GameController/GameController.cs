@@ -47,6 +47,8 @@ public class GameController : MonoBehaviour
         Time.timeScale = 1;
         //PlayerPrefs.DeleteKey("scene");
         gameSaveState.IndexLevel = PlayerPrefs.GetInt("scene");
+
+        InstantiateObjects();
     }
 
     // Update is called once per frame
@@ -185,6 +187,14 @@ public class GameController : MonoBehaviour
         foreach(GameObject carrot in carrotsLife)
         {
             carrot.SetActive(true);
+        }
+    }
+
+    private void InstantiateObjects()
+    {
+        if (SceneManager.GetActiveScene().buildIndex == 1)
+        {
+            companionBite = new CompanionBite();
         }
     }
 

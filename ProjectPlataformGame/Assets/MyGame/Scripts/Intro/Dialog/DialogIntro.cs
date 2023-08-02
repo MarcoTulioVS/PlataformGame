@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class DialogIntro : MonoBehaviour
 {
     [SerializeField]
@@ -13,10 +14,14 @@ public class DialogIntro : MonoBehaviour
 
     public GameObject dialogBox;
 
-    private bool dialogOn;
+    public bool dialogOn;
+
+    public GameObject gameNameScreen;
+
+    public static DialogIntro instance; 
     void Start()
     {
-        dialogOn = true;
+        instance = this;
     }
 
     
@@ -39,9 +44,19 @@ public class DialogIntro : MonoBehaviour
                 indexDialog = 0;
                 dialogBox.SetActive(false);
                 dialogOn = false;
+                StartCoroutine("StartGameName");
             }
         }
 
         dialogText.text = dialogList[indexDialog].ToString();
+    }
+
+    private IEnumerator StartGameName()
+    {
+        yield return new WaitForSeconds(3);
+        gameNameScreen.SetActive(true);
+        yield return new WaitForSeconds(5);
+        gameNameScreen.SetActive(false);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
