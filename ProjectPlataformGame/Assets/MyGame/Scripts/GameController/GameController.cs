@@ -43,6 +43,7 @@ public class GameController : MonoBehaviour
 
     void Awake()
     {
+        
         instance = this;
         Time.timeScale = 1;
         //PlayerPrefs.DeleteKey("scene");
@@ -128,14 +129,17 @@ public class GameController : MonoBehaviour
 
     public void DisableMenuScreenPause()
     {
+        
         menuScreenPause.SetActive(false);
         Time.timeScale = 1;
     }
 
     public void EnableMenuScreenPause()
     {
+        
         menuScreenPause.SetActive(true);
         Time.timeScale = 0;
+        
     }
 
     public void EnableAudioText2()

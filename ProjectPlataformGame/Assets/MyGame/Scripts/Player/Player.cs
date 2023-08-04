@@ -45,65 +45,61 @@ public class Player : MonoBehaviour
         colliderOffsetY = playerCollider.offset.y;
     }
 
-    
+
     void Update()
     {
         //Deve retirar a verificação do event system
         //quando for gerar a build para android
-        if (EventSystem.current.currentSelectedGameObject == null)
+
+        playerMovement.Move(playerInput.GetInput(), speed);
+
+        if (playerInput.GetInputJump() && playerMovement.IsGrounded)
         {
-            playerMovement.Move(playerInput.GetInput(), speed);
+            playerMovement.IsGrounded = false;
+            playerMovement.Jump(rb, jumpForce);
 
-            if (playerInput.GetInputJump() && playerMovement.IsGrounded)
+        }
+
+        if (playerInput.GetInputAttack())
+        {
+            if (playerMovement.isFront)
             {
-                playerMovement.IsGrounded = false;
-                playerMovement.Jump(rb, jumpForce);
-                
-            }
-       
-            if (playerInput.GetInputAttack())
-            {
-                if (playerMovement.isFront)
-                {
-                    playerAttack.Attack(forceShoot);
-                }
-                else
-                {
-                    playerAttack.Attack(-forceShoot);
-                }
-
-            }
-
-            if (!playerMovement.narrowArea)
-            {
-                if (playerInput.GetVerticalInput() < 0)
-                {
-                    playerCollider.size = new Vector2(playerCollider.size.x, 1.26f);
-                    playerCollider.offset = new Vector2(playerCollider.offset.x, -0.4f);
-                    playerMovement.MoveVertical();
-                    isDucked = true;
-
-                }
-                else
-                {
-                    playerCollider.size = new Vector2(playerCollider.size.x, colliderSizeY);
-                    playerCollider.offset = new Vector2(playerCollider.offset.x, colliderOffsetY);
-
-                    isDucked = false;
-                    playerMovement.isDucking = false;
-                }
+                playerAttack.Attack(forceShoot);
             }
             else
+            {
+                playerAttack.Attack(-forceShoot);
+            }
+
+        }
+
+        if (!playerMovement.narrowArea)
+        {
+            if (playerInput.GetVerticalInput() < 0)
             {
                 playerCollider.size = new Vector2(playerCollider.size.x, 1.26f);
                 playerCollider.offset = new Vector2(playerCollider.offset.x, -0.4f);
                 playerMovement.MoveVertical();
+                isDucked = true;
 
             }
-            
+            else
+            {
+                playerCollider.size = new Vector2(playerCollider.size.x, colliderSizeY);
+                playerCollider.offset = new Vector2(playerCollider.offset.x, colliderOffsetY);
 
-        }//end event system verification
-       
+                isDucked = false;
+                playerMovement.isDucking = false;
+            }
+        }
+        else
+        {
+            playerCollider.size = new Vector2(playerCollider.size.x, 1.26f);
+            playerCollider.offset = new Vector2(playerCollider.offset.x, -0.4f);
+            playerMovement.MoveVertical();
+
+        }
+
     }
 
 
