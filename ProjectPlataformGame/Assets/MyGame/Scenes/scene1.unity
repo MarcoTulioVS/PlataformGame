@@ -6290,7 +6290,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &180053121
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6328,7 +6328,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 946857596}
           m_TargetAssemblyTypeName: MobilePlayerInput, Assembly-CSharp
           m_MethodName: DirectionMovement
           m_Mode: 3
@@ -6344,7 +6344,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 946857596}
           m_TargetAssemblyTypeName: MobilePlayerInput, Assembly-CSharp
           m_MethodName: DirectionMovement
           m_Mode: 3
@@ -11794,7 +11794,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &250692981
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11832,7 +11832,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 946857596}
           m_TargetAssemblyTypeName: MobilePlayerInput, Assembly-CSharp
           m_MethodName: ExecuteAttack
           m_Mode: 6
@@ -11848,7 +11848,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 946857596}
           m_TargetAssemblyTypeName: MobilePlayerInput, Assembly-CSharp
           m_MethodName: ExecuteAttack
           m_Mode: 6
@@ -31592,7 +31592,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 946857590}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17e3e3b92cec8974192eae45e1a61679, type: 3}
+  m_Script: {fileID: 11500000, guid: c6b45de8e34868a4b969db7c47db1c5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &946857597
@@ -32125,7 +32125,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1005812098
 RectTransform:
   m_ObjectHideFlags: 0
@@ -32163,7 +32163,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 946857596}
           m_TargetAssemblyTypeName: MobilePlayerInput, Assembly-CSharp
           m_MethodName: DirectionMovement
           m_Mode: 3
@@ -32179,7 +32179,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 946857596}
           m_TargetAssemblyTypeName: MobilePlayerInput, Assembly-CSharp
           m_MethodName: DirectionMovement
           m_Mode: 3
@@ -44684,7 +44684,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1452202510
 RectTransform:
   m_ObjectHideFlags: 0
@@ -44722,26 +44722,10 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 946857596}
           m_TargetAssemblyTypeName: MobilePlayerInput, Assembly-CSharp
           m_MethodName: VerticalMovement
-          m_Mode: 3
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: -1
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
-  - eventID: 3
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: MobilePlayerInput, Assembly-CSharp
-          m_MethodName: VerticalMovement
-          m_Mode: 3
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -53995,7 +53979,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1957234958
 RectTransform:
   m_ObjectHideFlags: 0
@@ -54033,7 +54017,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 946857596}
           m_TargetAssemblyTypeName: MobilePlayerInput, Assembly-CSharp
           m_MethodName: ExecuteJump
           m_Mode: 6
@@ -54049,7 +54033,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 946857596}
           m_TargetAssemblyTypeName: MobilePlayerInput, Assembly-CSharp
           m_MethodName: ExecuteJump
           m_Mode: 6
