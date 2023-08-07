@@ -67,9 +67,11 @@ public class TutorialController : MonoBehaviour
 
     IEnumerator ShowScreenTutorial()
     {
+        menuButton.enabled = false;
         playerMovement.tutorialObj.GetComponent<Tutorial>().tutorialScreen.SetActive(true);
         yield return new WaitForSeconds(2.5f);
         playerMovement.tutorialObj.GetComponent<Tutorial>().tutorialScreen.SetActive(false);
+        menuButton.enabled = true;
     }
 
     

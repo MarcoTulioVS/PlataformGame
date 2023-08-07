@@ -169,10 +169,6 @@ public class PlayerMovement : MonoBehaviour,IPlayerMovement
             narrowArea = false;
         }
 
-        if (collision.gameObject.tag == "tutorial")
-        {
-            TutorialController.instance.menuButton.enabled = true;
-        }
     }
     public void MoveVertical()
     {
