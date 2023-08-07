@@ -14,6 +14,8 @@ public class TutorialController : MonoBehaviour
     public PlayerMovement playerMovement;
 
     private bool tutorialActive;
+
+    public Button menuButton;
     private void Awake()
     {
         instance = this;

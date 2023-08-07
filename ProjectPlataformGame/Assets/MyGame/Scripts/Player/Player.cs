@@ -48,8 +48,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        //Deve retirar a verificação do event system
-        //quando for gerar a build para android
+        
 
         playerMovement.Move(playerInput.GetInput(), speed);
 
@@ -100,6 +99,7 @@ public class Player : MonoBehaviour
 
         }
 
+        
     }
 
 

@@ -157,7 +157,7 @@ public class PlayerMovement : MonoBehaviour,IPlayerMovement
         {
             tutorialObj = collision.gameObject;
             TutorialController.instance.ShowDialogBox();
-            
+            TutorialController.instance.menuButton.enabled = false;
         }
         
     }
@@ -167,6 +167,11 @@ public class PlayerMovement : MonoBehaviour,IPlayerMovement
         if (collision.gameObject.tag == "narrowArea")
         {
             narrowArea = false;
+        }
+
+        if (collision.gameObject.tag == "tutorial")
+        {
+            TutorialController.instance.menuButton.enabled = true;
         }
     }
     public void MoveVertical()
@@ -183,6 +188,10 @@ public class PlayerMovement : MonoBehaviour,IPlayerMovement
     private void Update()
     {
         timeStopped += Time.deltaTime;
-        
+
     }
+
+    
+
+    
 }

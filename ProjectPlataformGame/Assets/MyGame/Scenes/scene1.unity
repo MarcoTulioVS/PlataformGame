@@ -33173,7 +33173,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   time: 0
-  maxTime: 12
+  maxTime: 50
   playerHealth: {fileID: 946857601}
   playerSprite: {fileID: 946857591}
 --- !u!1001 &1154728082
@@ -47785,7 +47785,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1858532971}
-  m_BodyType: 0
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
